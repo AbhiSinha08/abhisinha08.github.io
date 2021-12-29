@@ -1,3 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap');
+
 @tailwind base;
 @tailwind utilities;
 
+nav {
+    font-family: 'Baloo Bhaijaan 2', sans-serif;
+}
