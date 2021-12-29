@@ -1,0 +1,67 @@
+/* inspired from https://codesandbox.io/s/w96ut */
+
+.animation li {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    animation:  animate linear infinite;
+}
+
+.animation li::before{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    border-radius: 12px;
+    width: 300px;
+    height: 12px;
+}
+
+.animation li:nth-child(1){
+    top: 40%;
+    left: 0;
+    animation-duration: 1.7s;
+}
+
+.animation li:nth-child(2){
+    top: 20%;
+    left: 0;
+    animation-duration: 3.2s;
+}
+
+.animation li:nth-child(3){
+    top: 0;
+    left:5%;
+    animation-duration: 2s;
+}
+
+.animation li:nth-child(4){
+    top: 0;
+    left:35%;
+    animation-duration: 1.4s;
+}
+
+.animation li:nth-child(5){
+    top: 0;
+    left:45%;
+    animation-duration: 2.5s;
+}
+
+.animation li:nth-child(6){
+    top: 0;
+    left:65%;
+    animation-duration: 2.8s;
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(210deg) translateX(0);
+        opacity: 0.8;
+    }
+    100% {
+        transform: rotate(210deg) translateX(-100vw);
+        opacity: 0;
+    }
+}
