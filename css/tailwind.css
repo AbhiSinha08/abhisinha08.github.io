@@ -1,8 +1,50 @@
 @import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind utilities;
 
-nav {
-    font-family: 'Baloo Bhaijaan 2', sans-serif;
+.shooting-star {
+    @apply animate-stars
+    absolute h-[12px] w-[12px] rounded-[50%]
+    before:absolute before:rounded-[12px] before:h-[12px] before:w-[300px]
+    before:bg-gradient-to-r before:to-transparent;
+}
+
+.shooting-star:nth-child(1){
+    animation-duration: 2.2s;
+    animation-delay: -0.5s;
+}
+.shooting-star:nth-child(2){
+    animation-duration: 3.7s;
+    animation-delay: -0.2s;
+}
+.shooting-star:nth-child(3){
+    animation-duration: 2.5s;
+    animation-delay: 1.1s;
+}
+.shooting-star:nth-child(4){
+    animation-duration: 1.9s;
+    animation-delay: 0.6s;
+}
+.shooting-star:nth-child(5){
+    animation-duration: 3s;
+    animation-delay: 0s;
+}
+.shooting-star:nth-child(6){
+    animation-duration: 3.3s;
+    animation-delay: 1.7s;
+}
+
+.nav-btn {
+    @apply px-4 pt-1 h-auto sm:hover:text-yellow-400 transition ease-linear duration-100 sm:hover:translate-y-1;
+}
+.nav-btn hr {
+    @apply border-[1px] rounded-full border-yellow-500 sm:border-transparent w-full sm:w-auto;
+}
+
+.sec-head{
+    @apply block text-4xl xs:text-5xl xl:text-6xl text-yellow-500 my-12 lg:my-24 text-center font-baloo;
 }
