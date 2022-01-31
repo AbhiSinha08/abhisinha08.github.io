@@ -1,0 +1,93 @@
+{
+    "comments": ["0: learning, 1: beginner, 2: intermediate, 3: experienced, 4: expert",
+                    "icons path: data/images/"],
+
+    "skills": {
+        "languages": [
+            {
+                "Python": {
+                    "rating": 3,
+                    "icon": "python.png"
+                }
+            },
+            {
+                "JavaScript": {
+                    "rating": 2,
+                    "icon": "js.png"
+                }
+            },
+            {
+                "HTML/CSS": {
+                    "rating": 3,
+                    "icon": "html.png"
+                }
+            },
+            {
+                "Solidity": {
+                    "rating": 0,
+                    "icon": "sol.png"
+                }
+            },
+            {
+                "SQL": {
+                    "rating": 2,
+                    "icon": "db.png"
+                }
+            }
+        ],
+
+        "libraries": [
+            {
+                "TailwindCSS": {
+                    "rating": 3,
+                    "icon": "tailwind.png"
+                }
+            },
+            {
+                "Flask": {
+                    "rating": 2,
+                    "icon": "flask.png"
+                }
+            },
+            {
+                "ReactJS": {
+                    "rating": 0,
+                    "icon": "react.png"
+                }
+            },
+            {
+                "PyGame": {
+                    "rating": 2,
+                    "icon": "game.png"
+                }
+            }
+        ],
+
+        "tools": [
+            {
+                "Linux": {
+                    "rating": 3,
+                    "icon": "linux.png"
+                }
+            },
+            {
+                "Git": {
+                    "rating": 3,
+                    "icon": "git.png"
+                }
+            },
+            {
+                "MySQL": {
+                    "rating": 2,
+                    "icon": "mysql.png"
+                }
+            },
+            {
+                "Adobe Illustrator": {
+                    "rating": 2,
+                    "icon": "ai.png"
+                }
+            }
+        ]
+    }
+}

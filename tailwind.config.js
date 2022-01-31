@@ -4,8 +4,23 @@ module.exports = {
     extend: {
         colors: {
             base: '#0C0032',
-            gr1: '#8E2DE2',
-            gr2: '#4A00E0',
+            gr1:{
+                1: '#8E2DE2',
+                2: '#4A00E0',
+                3: '#60a5fa'
+            },
+            gr2: {
+                1: '#fc4a1a',
+                2: '#f7b733'
+            },
+            gr3: {
+                1: '#00b09b',
+                2: '#96c93d'
+            },
+            gr4: {
+                1: '#7F00FF',
+                2: '#E100FF'
+            }
         },
         fontFamily : {
             baloo: ["'Baloo Bhaijaan 2'", 'sans-serif'],

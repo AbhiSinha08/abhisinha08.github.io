@@ -1,10 +1,22 @@
-@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@400;500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;1,200&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;800&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600&display=swap');
 
 @tailwind base;
 @tailwind utilities;
+
+@layer base {
+    /* Scrollbar */
+    *::-webkit-scrollbar {
+      width: 0.5em;
+      height: 0.5em;
+    }
+    *::-webkit-scrollbar-thumb {
+      background-color: rgba(255, 255, 255, 0.5);
+      border-radius: 1em;
+    }
+}
 
 .shooting-star {
     @apply animate-stars
@@ -38,13 +50,33 @@
     animation-delay: 1.7s;
 }
 
-.nav-btn {
-    @apply px-4 pt-1 h-auto sm:hover:text-yellow-400 transition ease-linear duration-100 sm:hover:translate-y-1;
-}
-.nav-btn hr {
-    @apply border-[1px] rounded-full border-yellow-500 sm:border-transparent w-full sm:w-auto;
-}
+@tailwind components;
 
-.sec-head{
-    @apply block text-4xl xs:text-5xl xl:text-6xl text-yellow-500 my-12 lg:my-24 text-center font-baloo;
+@layer components {
+    .nav-btn {
+        @apply px-4 pt-1 h-auto cursor-pointer sm:hover:text-yellow-400
+            transition ease-linear duration-100 sm:hover:translate-y-1;
+    }
+    .nav-btn hr {
+        @apply border-[1px] rounded-full border-yellow-500
+            sm:border-transparent w-full sm:w-auto;
+    }
+
+    .sec-head {
+        @apply block text-4xl xs:text-5xl xl:text-6xl text-yellow-500
+            my-12 lg:mt-24 lg:mb-16 text-center font-baloo font-medium;
+    }
+
+    .skills-box {
+        @apply snap-always min-w-[24rem] flex-grow h-[95%] rounded-2xl
+            border-[1.5px] backdrop-blur-md backdrop-filter relative
+            font-nunito font-normal text-xl;
+    }
+    .skills-box > p {
+        @apply text-white font-nunito font-semibold text-2xl py-2
+            text-center absolute top-0 left-0 w-full flex flex-col;
+    }
+    .skills-box hr {
+        @apply rounded-full w-[80%] bg-white mx-auto;
+    }
 }
