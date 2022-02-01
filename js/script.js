@@ -34,7 +34,7 @@ const data = {
 async function getData(section) {
     let url = "/data/" + section + ".json";
     let obj = await (await fetch(url)).json();
-    await sleep(400);
+    // await sleep(2000);
     return obj[section];
 }
 
@@ -106,6 +106,25 @@ function showSkills() {
         
         tools.innerHTML += component;
     }
+
+    // On-scroll animation
+    const callback = function (entries) {
+        entries.forEach((entry) => {      
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-l");
+            } else {
+              entry.target.classList.remove("animate-fade-l");
+            }
+        });
+      };
+    
+    const observer = new IntersectionObserver(callback);
+    
+    const targets = document.querySelectorAll(".fade-l-scroll");
+    targets.forEach(function (target) {
+        target.classList.remove("animate-fade-l");
+        observer.observe(target);
+    });
 }
 
 

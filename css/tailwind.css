@@ -70,7 +70,7 @@
     .skills-box {
         @apply snap-always min-w-[24rem] flex-grow h-[95%] rounded-2xl
             border-[1.5px] backdrop-blur-md backdrop-filter relative
-            font-nunito font-normal text-xl;
+            font-nunito font-normal text-xl overflow-y-auto;
     }
     .skills-box > p {
         @apply text-white font-nunito font-semibold text-2xl py-2

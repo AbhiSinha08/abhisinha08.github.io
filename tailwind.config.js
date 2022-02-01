@@ -30,7 +30,9 @@ module.exports = {
         },
         animation: {
             stars: 'shooting-star linear infinite',
-            blink: 'blink 1.2s linear infinite'
+            blink: 'blink 1.2s linear infinite',
+            'fade-l': 'fade-l 0.5s ease-out',
+            'fade-r': 'fade-r 0.5s ease-out'
         },
         keyframes: {
             'shooting-star': {
@@ -49,6 +51,26 @@ module.exports = {
                 },
                 '30%, 80%': {
                     opacity: '0'
+                }
+            },
+            'fade-l': {
+                '0%': {
+                    transform: 'translateX(-50vw)',
+                    opacity: '0.1'
+                },
+                '100%': {
+                    transform: 'none',
+                    opacity: '1'
+                }
+            },
+            'fade-r': {
+                '0%': {
+                    transform: 'translateX(50vw)',
+                    opacity: '0.1'
+                },
+                '100%': {
+                    transform: 'none',
+                    opacity: '1'
                 }
             }
         }
