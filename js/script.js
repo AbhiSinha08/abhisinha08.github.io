@@ -106,25 +106,6 @@ function showSkills() {
         
         tools.innerHTML += component;
     }
-
-    // On-scroll animation
-    const callback = function (entries) {
-        entries.forEach((entry) => {      
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate-fade-l");
-            } else {
-              entry.target.classList.remove("animate-fade-l");
-            }
-        });
-      };
-    
-    const observer = new IntersectionObserver(callback);
-    
-    const targets = document.querySelectorAll(".fade-l-scroll");
-    targets.forEach(function (target) {
-        target.classList.remove("animate-fade-l");
-        observer.observe(target);
-    });
 }
 
 
@@ -179,4 +160,41 @@ document.addEventListener('DOMContentLoaded', () => {
         var topPos = contact.offsetTop;
         content.scrollTop = topPos;
     })
+
+    // On-scroll animations
+    const callback = function (entries) {
+        entries.forEach((entry) => {      
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-l");
+            } else {
+              entry.target.classList.remove("animate-fade-l");
+            }
+        });
+      };
+    
+    const observer = new IntersectionObserver(callback);
+    
+    const targets = document.querySelectorAll(".fade-l-scroll");
+    targets.forEach(function (target) {
+        target.classList.remove("animate-fade-l");
+        observer.observe(target);
+    });
+
+    const callback2 = function (entries) {
+        entries.forEach((entry) => {      
+            if (entry.isIntersecting) {
+              entry.target.classList.add("animate-fade-r");
+            } else {
+              entry.target.classList.remove("animate-fade-r");
+            }
+        });
+      };
+    
+    const observer2 = new IntersectionObserver(callback2);
+    
+    const targets2 = document.querySelectorAll(".fade-r-scroll");
+    targets2.forEach(function (target) {
+        target.classList.remove("animate-fade-r");
+        observer2.observe(target);
+    });
 });
