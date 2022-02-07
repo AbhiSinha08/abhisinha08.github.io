@@ -1,5 +1,5 @@
 module.exports = {
-  content: ["./**/*.{html,js}"],
+  content: ["./**/*.{html,js,json}"],
   theme: {
     extend: {
         colors: {
@@ -32,7 +32,8 @@ module.exports = {
             stars: 'shooting-star linear infinite',
             blink: 'blink 1.2s linear infinite',
             'fade-l': 'fade-l 0.5s ease-out',
-            'fade-r': 'fade-r 0.5s ease-out'
+            'fade-r': 'fade-r 0.5s ease-out',
+            'fade-b': 'fade-b 0.5s ease-out'
         },
         keyframes: {
             'shooting-star': {
@@ -66,6 +67,16 @@ module.exports = {
             'fade-r': {
                 '0%': {
                     transform: 'translateX(50vw)',
+                    opacity: '0.1'
+                },
+                '100%': {
+                    transform: 'none',
+                    opacity: '1'
+                }
+            },
+            'fade-b': {
+                '0%': {
+                    transform: 'translateY(50vh)',
                     opacity: '0.1'
                 },
                 '100%': {

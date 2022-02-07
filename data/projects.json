@@ -1,0 +1,89 @@
+{
+    "comments": ["icons path: data/images/"],
+
+    "projects": {
+        "web": [
+            {
+                "Portfolio": {
+                    "desc": "This website! <br> Personal Portfolio website built from scratch using TailwindCSS and Vanilla JavaScript.",
+                    "images": {
+                        "main": "portfolio1.png",
+                        "slides": ["portfolio2.png", "portfolio3.png"]
+                    },
+                    "techStack": ["JavaScript", "HTML", "TailwindCSS"],
+                    "links": {
+                        "github": "https://github.com/AbhiSinha08/abhisinha08.github.io",
+                        "hosted": "https://abhisinha08.github.io",
+                        "demo": null
+                    }
+                }
+            },
+            {
+                "NotiSmart": {
+                    "desc": "A Smart and configurable multi-threaded notification engine to create and execute notifications for everyone or specified roles based on various triggers and conditions. Suitable for any office or company.",
+                    "images": {
+                        "main": "notismart1.png",
+                        "slides": ["notismart2.png", "notismart3.png"]
+                    },
+                    "techStack": ["Python", "Flask", "MySQL", "JavaScript", "HTML", "TailwindCSS"],
+                    "links": {
+                        "github": "https://github.com/AbhiSinha08/Build-a-Thon-Project",
+                        "hosted": null,
+                        "demo": "https://drive.google.com/file/d/1RCuF44Y-WDSxCskHYgIEwwubK8SOY2rR/view"
+                    }
+                }
+            },
+            {
+                "Address Formatter": {
+                    "desc": "An API + web-based interface to format addresses to remove repetitive area names, have proper capitalization and be less bulkier. It takes the raw address same as in aadhar portal's pattern.",
+                    "images": {
+                        "main": "aadhaar1.png",
+                        "slides": ["aadhaar2.png"]
+                    },
+                    "techStack": ["Python", "Flask", "JavaScript", "HTML", "TailwindCSS"],
+                    "links": {
+                        "github": "https://github.com/AbhiSinha08/Aadhaarhack",
+                        "hosted": "https://address-formatter.herokuapp.com/",
+                        "demo": null
+                    }
+                }
+            }
+        ],
+        "desktop": [
+            {
+                "Library Management System": {
+                    "desc": "A Library Management App made in Python with a SQLite Database connection with a simple graphical user interface built using Tkinter library.",
+                    "images": {
+                        "main": "library1.png",
+                        "slides": ["library2.png"]
+                    },
+                    "techStack": ["Python", "SQLite", "Tkinter"],
+                    "links": {
+                        "github": "https://github.com/AbhiSinha08/Library-Manangement-System-GUI",
+                        "hosted": null,
+                        "demo": null
+                    }
+                }
+            }
+        ],
+        "game": [
+            {
+                "Ghost Shooter": {
+                    "desc": "A Simple Shooter Desktop Game made using Pygame in Python.",
+                    "images": {
+                        "main": "pygame1.png",
+                        "slides": ["pygame2.png", "pygame3.png", "pygame4.png", "pygame5.png"]
+                    },
+                    "techStack": ["Python", "PyGame"],
+                    "links": {
+                        "github": "https://github.com/AbhiSinha08/Ghost-Shooter-Pygame",
+                        "hosted": null,
+                        "demo": null
+                    }
+                }
+            }
+        ],
+        "web3":[],
+        "ml": []
+    }
+}

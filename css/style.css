@@ -746,64 +746,6 @@ Ensure the default browser behavior of the `hidden` attribute.
           animation: spin 1s linear infinite;
 }
 
-@-webkit-keyframes fade-l{
-  0%{
-    transform: translateX(-50vw);
-    opacity: 0.1;
-  }
-
-  100%{
-    transform: none;
-    opacity: 1;
-  }
-}
-
-@keyframes fade-l{
-  0%{
-    transform: translateX(-50vw);
-    opacity: 0.1;
-  }
-
-  100%{
-    transform: none;
-    opacity: 1;
-  }
-}
-
-.animate-fade-l{
-  -webkit-animation: fade-l 0.5s ease-out;
-          animation: fade-l 0.5s ease-out;
-}
-
-@-webkit-keyframes fade-r{
-  0%{
-    transform: translateX(50vw);
-    opacity: 0.1;
-  }
-
-  100%{
-    transform: none;
-    opacity: 1;
-  }
-}
-
-@keyframes fade-r{
-  0%{
-    transform: translateX(50vw);
-    opacity: 0.1;
-  }
-
-  100%{
-    transform: none;
-    opacity: 1;
-  }
-}
-
-.animate-fade-r{
-  -webkit-animation: fade-r 0.5s ease-out;
-          animation: fade-r 0.5s ease-out;
-}
-
 .cursor-pointer{
   cursor: pointer;
 }
@@ -1158,8 +1100,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   transition-duration: 300ms;
 }
 
+.duration-150{
+  transition-duration: 150ms;
+}
+
 .ease-out{
   transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.ease-in{
+  transition-timing-function: cubic-bezier(0.4, 0, 1, 1);
 }
 
 .shooting-star{
@@ -1335,6 +1285,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   height: 95%;
   min-width: 24rem;
   flex-grow: 1;
+  transform: var(--tw-transform);
   scroll-snap-stop: always;
   overflow-y: auto;
   border-radius: 1rem;
@@ -1346,6 +1297,37 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-backdrop-blur: blur(12px);
   -webkit-backdrop-filter: var(--tw-backdrop-filter);
           backdrop-filter: var(--tw-backdrop-filter);
+  transition-duration: 200ms;
+}
+
+@media (min-width: 1024px){
+  @media (prefers-reduced-motion: no-preference){
+    .skills-box{
+      --tw-scale-x: 98%;
+      --tw-scale-y: 98%;
+      transform: var(--tw-transform);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .skills-box{
+      opacity: 0.9;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .skills-box:hover{
+      --tw-scale-x: 1;
+      --tw-scale-y: 1;
+      transform: var(--tw-transform);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .skills-box:hover{
+      opacity: 1;
+    }
+  }
 }
 
 .skills-box > p{
@@ -1419,6 +1401,94 @@ Ensure the default browser behavior of the `hidden` attribute.
 .focus\:border-yellow-500:focus{
   --tw-border-opacity: 1;
   border-color: rgb(234 179 8 / var(--tw-border-opacity));
+}
+
+@media (prefers-reduced-motion: no-preference){
+  @-webkit-keyframes fade-l{
+    0%{
+      transform: translateX(-50vw);
+      opacity: 0.1;
+    }
+
+    100%{
+      transform: none;
+      opacity: 1;
+    }
+  }
+  @keyframes fade-l{
+    0%{
+      transform: translateX(-50vw);
+      opacity: 0.1;
+    }
+
+    100%{
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  .motion-safe\:animate-fade-l{
+    -webkit-animation: fade-l 0.5s ease-out;
+            animation: fade-l 0.5s ease-out;
+  }
+
+  @-webkit-keyframes fade-r{
+    0%{
+      transform: translateX(50vw);
+      opacity: 0.1;
+    }
+
+    100%{
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-r{
+    0%{
+      transform: translateX(50vw);
+      opacity: 0.1;
+    }
+
+    100%{
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  .motion-safe\:animate-fade-r{
+    -webkit-animation: fade-r 0.5s ease-out;
+            animation: fade-r 0.5s ease-out;
+  }
+
+  @-webkit-keyframes fade-b{
+    0%{
+      transform: translateY(50vh);
+      opacity: 0.1;
+    }
+
+    100%{
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  @keyframes fade-b{
+    0%{
+      transform: translateY(50vh);
+      opacity: 0.1;
+    }
+
+    100%{
+      transform: none;
+      opacity: 1;
+    }
+  }
+
+  .motion-safe\:animate-fade-b{
+    -webkit-animation: fade-b 0.5s ease-out;
+            animation: fade-b 0.5s ease-out;
+  }
 }
 
 @media (min-width: 475px){
@@ -1510,6 +1580,21 @@ Ensure the default browser behavior of the `hidden` attribute.
     font-size: 1.5rem;
     line-height: 2rem;
   }
+
+  @media (prefers-reduced-motion: no-preference){
+    .group:hover .md\:motion-safe\:group-hover\:scale-110{
+      --tw-scale-x: 1.1;
+      --tw-scale-y: 1.1;
+      transform: var(--tw-transform);
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .group:hover .md\:motion-safe\:group-hover\:scale-y-150{
+      --tw-scale-y: 1.5;
+      transform: var(--tw-transform);
+    }
+  }
 }
 
 @media (min-width: 1024px){
@@ -1536,6 +1621,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:max-w-\[40vw\]{
     max-width: 40vw;
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .lg\:motion-safe\:opacity-75{
+      opacity: 0.75;
+    }
+  }
+
+  @media (prefers-reduced-motion: no-preference){
+    .group:hover .lg\:motion-safe\:group-hover\:opacity-100{
+      opacity: 1;
+    }
   }
 }
 

@@ -24,6 +24,27 @@ async function hello() {
     }
 }
 
+// On-scroll animation generator function
+function scrollAnimate(element, animationClass) {
+    const callback = function (entries) {
+        entries.forEach((entry) => {      
+            if (entry.isIntersecting) {
+                entry.target.classList.add(animationClass);
+            } else {
+                entry.target.classList.remove(animationClass);
+            }
+        });
+    };
+
+    const observer = new IntersectionObserver(callback);
+
+    const targets = document.querySelectorAll(element);
+    targets.forEach(function (target) {
+        target.classList.remove(animationClass);
+        observer.observe(target);
+    });
+}
+
 const data = {
     skills: {},
     projects: {},
@@ -38,7 +59,7 @@ async function getData(section) {
     return obj[section];
 }
 
-async function show(section, callback) {
+async function load(section, callback) {
     while (Object.keys(data[section]).length === 0) {
         data[section] = await getData(section);
     }
@@ -64,13 +85,18 @@ function showSkills() {
         4: "w-[95%]"
     };
     const template = `
-                <div class="px-6">
+                <div class="px-6 group">
                     <div class="flex mt-3 justify-between w-full items-center">
                         <span> $name$ </span>
-                        <img class="h-[2rem]" src="./data/images/$icon$" alt="icon">
+                        <img class="h-[2rem] transform duration-150 ease-in
+                            lg:motion-safe:opacity-75 lg:motion-safe:group-hover:opacity-100
+                            md:motion-safe:group-hover:scale-110"
+                            src="./data/images/$icon$" alt="icon">
                     </div>
                     <div class="my-2 rounded-full w-full bg-white/30 h-2">
-                        <div class="bg-gradient-to-r $gradient$ $width$ h-full rounded-full"></div>
+                        <div class="bg-gradient-to-r $gradient$ $width$
+                            h-full rounded-full transform duration-150 ease-in
+                            md:motion-safe:group-hover:scale-y-150"></div>
                     </div>
                 </div>
                 `;
@@ -108,11 +134,15 @@ function showSkills() {
     }
 }
 
+function showProjects() {
+    console.log(data.projects);
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    show("skills", showSkills);
-    // show("projects", showProjects);
-    // show("about", showAbout);
+    load("skills", showSkills);
+    load("projects", showProjects);
+    // load("about", showAbout);
     hello();
 
     const nav = document.querySelector('#nav');
@@ -161,40 +191,8 @@ document.addEventListener('DOMContentLoaded', () => {
         content.scrollTop = topPos;
     })
 
-    // On-scroll animations
-    const callback = function (entries) {
-        entries.forEach((entry) => {      
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate-fade-l");
-            } else {
-              entry.target.classList.remove("animate-fade-l");
-            }
-        });
-      };
-    
-    const observer = new IntersectionObserver(callback);
-    
-    const targets = document.querySelectorAll(".fade-l-scroll");
-    targets.forEach(function (target) {
-        target.classList.remove("animate-fade-l");
-        observer.observe(target);
-    });
-
-    const callback2 = function (entries) {
-        entries.forEach((entry) => {      
-            if (entry.isIntersecting) {
-              entry.target.classList.add("animate-fade-r");
-            } else {
-              entry.target.classList.remove("animate-fade-r");
-            }
-        });
-      };
-    
-    const observer2 = new IntersectionObserver(callback2);
-    
-    const targets2 = document.querySelectorAll(".fade-r-scroll");
-    targets2.forEach(function (target) {
-        target.classList.remove("animate-fade-r");
-        observer2.observe(target);
-    });
+    // On scroll animations
+    scrollAnimate(".fade-l-scroll", "motion-safe:animate-fade-l");
+    scrollAnimate(".fade-r-scroll", "motion-safe:animate-fade-r");
+    scrollAnimate(".fade-b-scroll", "motion-safe:animate-fade-b");
 });
