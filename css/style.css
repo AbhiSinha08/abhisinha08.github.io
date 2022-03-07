@@ -436,6 +436,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 *::-webkit-scrollbar {
   width: 0.5em;
   height: 0.5em;
+  background-color: transparent;
 }
 
 *::-webkit-scrollbar-thumb {
@@ -459,6 +460,16 @@ Ensure the default browser behavior of the `hidden` attribute.
   --tw-ring-shadow: 0 0 #0000;
   --tw-shadow: 0 0 #0000;
   --tw-shadow-colored: 0 0 #0000;
+  --tw-blur: var(--tw-empty,/*!*/ /*!*/);
+  --tw-brightness: var(--tw-empty,/*!*/ /*!*/);
+  --tw-contrast: var(--tw-empty,/*!*/ /*!*/);
+  --tw-grayscale: var(--tw-empty,/*!*/ /*!*/);
+  --tw-hue-rotate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-invert: var(--tw-empty,/*!*/ /*!*/);
+  --tw-saturate: var(--tw-empty,/*!*/ /*!*/);
+  --tw-sepia: var(--tw-empty,/*!*/ /*!*/);
+  --tw-drop-shadow: var(--tw-empty,/*!*/ /*!*/);
+  --tw-filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
   --tw-backdrop-blur: var(--tw-empty,/*!*/ /*!*/);
   --tw-backdrop-brightness: var(--tw-empty,/*!*/ /*!*/);
   --tw-backdrop-contrast: var(--tw-empty,/*!*/ /*!*/);
@@ -513,6 +524,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .left-\[65\%\]{
   left: 65%;
+}
+
+.-top-12{
+  top: -3rem;
 }
 
 .my-0{
@@ -1048,6 +1063,14 @@ Ensure the default browser behavior of the `hidden` attribute.
   font-weight: 800;
 }
 
+.font-extralight{
+  font-weight: 200;
+}
+
+.italic{
+  font-style: italic;
+}
+
 .text-white{
   --tw-text-opacity: 1;
   color: rgb(255 255 255 / var(--tw-text-opacity));
@@ -1061,6 +1084,11 @@ Ensure the default browser behavior of the `hidden` attribute.
 .text-green-500{
   --tw-text-opacity: 1;
   color: rgb(34 197 94 / var(--tw-text-opacity));
+}
+
+.text-yellow-300{
+  --tw-text-opacity: 1;
+  color: rgb(253 224 71 / var(--tw-text-opacity));
 }
 
 .opacity-60{
@@ -1094,6 +1122,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 .shadow-gray-200\/20{
   --tw-shadow-color: rgb(229 231 235 / 0.2);
   --tw-shadow: var(--tw-shadow-colored);
+}
+
+.filter{
+  filter: var(--tw-filter);
 }
 
 .duration-300{
@@ -1265,10 +1297,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 @media (min-width: 1024px){
   .sec-head{
-    margin-top: 6rem;
-  }
-
-  .sec-head{
+    margin-top: 4rem;
     margin-bottom: 4rem;
   }
 }
@@ -1357,6 +1386,22 @@ Ensure the default browser behavior of the `hidden` attribute.
   background-color: rgb(255 255 255 / var(--tw-bg-opacity));
 }
 
+.selection\:bg-green-500\/40 *::-moz-selection{
+  background-color: rgb(34 197 94 / 0.4);
+}
+
+.selection\:bg-green-500\/40 *::selection{
+  background-color: rgb(34 197 94 / 0.4);
+}
+
+.selection\:bg-green-500\/40::-moz-selection{
+  background-color: rgb(34 197 94 / 0.4);
+}
+
+.selection\:bg-green-500\/40::selection{
+  background-color: rgb(34 197 94 / 0.4);
+}
+
 .before\:from-red-400::before{
   content: var(--tw-content);
   --tw-gradient-from: #f87171;
@@ -1406,7 +1451,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 @media (prefers-reduced-motion: no-preference){
   @-webkit-keyframes fade-l{
     0%{
-      transform: translateX(-50vw);
+      transform: translateX(-70vw);
       opacity: 0.1;
     }
 
@@ -1417,7 +1462,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
   @keyframes fade-l{
     0%{
-      transform: translateX(-50vw);
+      transform: translateX(-70vw);
       opacity: 0.1;
     }
 
@@ -1428,13 +1473,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 
   .motion-safe\:animate-fade-l{
-    -webkit-animation: fade-l 0.5s ease-out;
-            animation: fade-l 0.5s ease-out;
+    -webkit-animation: fade-l 0.6s ease-out;
+            animation: fade-l 0.6s ease-out;
   }
 
   @-webkit-keyframes fade-r{
     0%{
-      transform: translateX(50vw);
+      transform: translateX(70vw);
       opacity: 0.1;
     }
 
@@ -1446,7 +1491,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   @keyframes fade-r{
     0%{
-      transform: translateX(50vw);
+      transform: translateX(70vw);
       opacity: 0.1;
     }
 
@@ -1457,13 +1502,13 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 
   .motion-safe\:animate-fade-r{
-    -webkit-animation: fade-r 0.5s ease-out;
-            animation: fade-r 0.5s ease-out;
+    -webkit-animation: fade-r 0.6s ease-out;
+            animation: fade-r 0.6s ease-out;
   }
 
   @-webkit-keyframes fade-b{
     0%{
-      transform: translateY(50vh);
+      transform: translateY(70vh);
       opacity: 0.1;
     }
 
@@ -1475,7 +1520,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   @keyframes fade-b{
     0%{
-      transform: translateY(50vh);
+      transform: translateY(70vh);
       opacity: 0.1;
     }
 
@@ -1486,8 +1531,8 @@ Ensure the default browser behavior of the `hidden` attribute.
   }
 
   .motion-safe\:animate-fade-b{
-    -webkit-animation: fade-b 0.5s ease-out;
-            animation: fade-b 0.5s ease-out;
+    -webkit-animation: fade-b 0.6s ease-out;
+            animation: fade-b 0.6s ease-out;
   }
 }
 
@@ -1598,6 +1643,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1024px){
+  .lg\:-top-16{
+    top: -4rem;
+  }
+
   .lg\:mx-0{
     margin-left: 0px;
     margin-right: 0px;
@@ -1640,5 +1689,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   .xl\:text-6xl{
     font-size: 3.75rem;
     line-height: 1;
+  }
+
+  .xl\:text-lg{
+    font-size: 1.125rem;
+    line-height: 1.75rem;
   }
 }

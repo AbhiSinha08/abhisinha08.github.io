@@ -140,6 +140,7 @@ function showProjects() {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+    load("general");
     load("skills", showSkills);
     load("projects", showProjects);
     // load("about", showAbout);

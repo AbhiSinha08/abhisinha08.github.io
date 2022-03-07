@@ -11,6 +11,7 @@
     *::-webkit-scrollbar {
       width: 0.5em;
       height: 0.5em;
+      background-color: transparent;
     }
     *::-webkit-scrollbar-thumb {
       background-color: rgba(255, 255, 255, 0.5);
@@ -64,7 +65,7 @@
 
     .sec-head {
         @apply block text-4xl xs:text-5xl xl:text-6xl text-yellow-500
-            my-12 lg:mt-24 lg:mb-16 text-center font-baloo font-medium;
+            my-12 lg:my-16 text-center font-baloo font-medium;
     }
 
     .skills-box {
