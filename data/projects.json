@@ -49,7 +49,7 @@
                 }
             }
         ],
-        "desktop": [
+        "app": [
             {
                 "Library Management System": {
                     "desc": "A Library Management App made in Python with a SQLite Database connection with a simple graphical user interface built using Tkinter library.",
