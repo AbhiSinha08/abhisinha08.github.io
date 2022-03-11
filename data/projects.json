@@ -8,7 +8,7 @@
                     "desc": "This website! <br> Personal Portfolio website built from scratch using TailwindCSS and Vanilla JavaScript.",
                     "images": {
                         "main": "portfolio1.png",
-                        "slides": ["portfolio2.png", "portfolio3.png"]
+                        "slides": ["portfolio2.png"]
                     },
                     "techStack": ["JavaScript", "HTML", "TailwindCSS"],
                     "links": {
@@ -72,7 +72,7 @@
                     "desc": "A Simple Shooter Desktop Game made using Pygame in Python.",
                     "images": {
                         "main": "pygame1.png",
-                        "slides": ["pygame2.png", "pygame3.png", "pygame4.png", "pygame5.png"]
+                        "slides": ["pygame2.png", "pygame3.png", "pygame4.png"]
                     },
                     "techStack": ["Python", "PyGame"],
                     "links": {

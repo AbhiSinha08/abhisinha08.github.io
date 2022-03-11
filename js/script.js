@@ -73,6 +73,24 @@ async function load(section, callback) {
         callback();
 }
 
+function slides(images, left, right) {
+    for (let image of images) {
+        image.classList.add('hidden');
+    }
+    images[0].classList.remove('hidden');
+    let current = 0, len = images.length;
+
+    function change(x) {
+        images[current].classList.add('hidden');
+        current = (current + x) % len;
+        if (current === -1) current = len - 1;
+        images[current].classList.remove('hidden');
+    }
+
+    left.addEventListener('click', () => {change(-1);});
+    right.addEventListener('click', () => {change(1);});
+}
+
 function showSkills() {
     const lang_gr = "from-gr2-1 to-gr2-2";
     const lib_gr = "from-gr3-1 to-gr3-2";
@@ -156,10 +174,20 @@ function showProjects() {
     }
 
     const template = `
-                <div class="flex flex-col lg:flex-row lg:flex-wrap justify-between h-[55vh] lg:h-[45vh] min-w-[90%] sm:min-w-[70%] sm:max-w-[80%] md:min-w-[50%] md:max-w-[70%] lg:w-[50%] snap-start snap-always">
+                <div id="proj-$id$" class="flex flex-col lg:flex-row lg:flex-wrap justify-between h-[55vh] lg:h-[45vh] min-w-[90%] sm:min-w-[70%] sm:max-w-[80%] md:min-w-[50%] md:max-w-[70%] lg:w-[50%] snap-start snap-always">
                     <div class="flex flex-col flex-grow h-auto w-full lg:w-[60%] lg:flex-grow-0 lg:order-1">    
-                        <div class="flex justify-center w-full lg:w-auto max-h-[27vh]">    
-                            <img src="./data/images/$image$" alt="image" class="rounded-md">
+                        <div class="flex justify-center relative w-full lg:w-auto max-h-[27vh]">
+                            <button class="left-btn absolute left-0 top-0 flex flex-col justify-center h-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-auto fill-transparent stroke-gray-400/90 rotate-90" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button>  
+                            $images$
+                            <button class="right-btn absolute right-0 top-0 flex flex-col justify-center h-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-auto fill-transparent stroke-gray-400/90 -rotate-90" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </button> 
                         </div>
                         <div class="text-bold font-nunito text-2xl text-center py-1 px-2"> $name$ </div>
                     </div>
@@ -174,23 +202,26 @@ function showProjects() {
                         </div>
                     </div>
                 </div>
+                <div class="py-4 h-[55vh] lg:h-[45vh] rounded-2xl bg-white/20 min-w-[2px]"> </div>
                 `;
     const linkTemplate = `<a href="$href$" class="underline underline-offset-[3px] text-blue-900"> $linkName$ </a>`;
+    const imageTemplate = `<img src="./data/images/$imagepath$" alt="image" class="proj-image rounded-md">`;
 
-    let component, name, links, tech;
+    let component, name, links, tech, images, imageList, leftBtn, rightBtn;
+    let projID = 1;
 
-    for (let section of Object.keys(sections)) {
-        document.querySelector('#' + section + ' header').onclick = () => {
-            hideAll(sections[section]);
-            sections[section].classList.toggle('hidden');
-            sections[section].classList.toggle('flex');
-            document.querySelector('#' + section + ' header svg').classList.toggle('rotate-180');
+    for (let sec of Object.keys(sections)) {
+        document.querySelector('#' + sec + ' header').onclick = () => {
+            hideAll(sections[sec]);
+            sections[sec].classList.toggle('hidden');
+            sections[sec].classList.toggle('flex');
+            document.querySelector('#' + sec + ' header svg').classList.toggle('rotate-180');
         }
 
-        if (data.projects[section].length == 0)
-            sections[section].innerHTML = "Projects coming soon";
+        if (data.projects[sec].length == 0)
+            sections[sec].innerHTML = "Projects coming soon";
         else {
-            for (let project of data.projects[section]){
+            for (let project of data.projects[sec]){
                 name = Object.keys(project)[0];
 
                 tech = "";
@@ -210,21 +241,41 @@ function showProjects() {
                     links += linkTemplate.replace("$linkName$", "Demo")
                              .replace("$href$", project[name].links.demo);
 
-                component = template.replace("$image$", project[name].images.main)
+                images = "";
+                images += imageTemplate.replace("$imagepath$", project[name].images.main);
+                for (let image of project[name].images.slides) {
+                    images += imageTemplate.replace("$imagepath$", image);
+                }
+                
+                component = template
+                            .replace("$id$", projID)
+                            .replace("$images$", images)
                             .replace("$name$", name)
                             .replace("$description$", project[name].desc)
                             .replace("$link$", links)
                             .replace("$techstack$", tech);
 
-                sections[section].innerHTML += component;
+                sections[sec].innerHTML += component;
+
+                imageList = document.querySelectorAll('#proj-' + projID + ' .proj-image');
+                leftBtn = document.querySelector('#proj-' + projID + ' .left-btn');
+                rightBtn = document.querySelector('#proj-' + projID + ' .right-btn');
+                projID += 1;
+
+                slides(imageList, leftBtn, rightBtn);
             }
+            sections[sec].lastElementChild.classList.add('hidden');
         }
     }
 }
 
+function temp(projID) {
+    
+}
+
 
 document.addEventListener('DOMContentLoaded', () => {
-    load("general");
+    // load("general");
     load("skills", showSkills);
     load("projects", showProjects);
     // load("about", showAbout);
@@ -277,7 +328,7 @@ document.addEventListener('DOMContentLoaded', () => {
     })
 
     // On scroll animations
-    scrollAnimate(".fade-l-scroll", "motion-safe:animate-fade-l");
-    scrollAnimate(".fade-r-scroll", "motion-safe:animate-fade-r");
-    scrollAnimate(".fade-b-scroll", "motion-safe:animate-fade-b");
+    // scrollAnimate(".fade-l-scroll", "motion-safe:animate-fade-l");
+    // scrollAnimate(".fade-r-scroll", "motion-safe:animate-fade-r");
+    // scrollAnimate(".fade-b-scroll", "motion-safe:animate-fade-b");
 });
