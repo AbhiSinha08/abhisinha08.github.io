@@ -92,7 +92,7 @@
                     <svg class="animate-spin h-[3em] lg:h-[4em] w-auto opacity-60 mt-[40%] md:mt-[25%] lg:mt-[12%] text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
+                    </svg>
                 </div>
                 <div class="hidden w-full h-full fade-l-scroll">
                     <div class="flex justify-between gap-6 overflow-x-scroll h-[75%] w-full snap-x snap-mandatory">
@@ -130,16 +130,43 @@
                     <svg class="animate-spin h-[3em] lg:h-[4em] w-auto opacity-60 mt-[40%] md:mt-[25%] lg:mt-[12%] text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
+                    </svg>
                 </div>
                 <div class="hidden fade-r-scroll h-[70vh] overflow-y-scroll overscroll-y-auto px-4 -mx-4">
                     <!-- <div class="font-nunito font-extralight italic text-yellow-300 relative -top-12 lg:-top-16 xl:text-lg text-center"> "ughhh... another jack of all trades..." </div> -->
                     <div>
-                        <!-- <div id="filter">
+                        <div id="filter" class="font-nunito hidden md:block text-lg lg:flex lg:justify-between mb-4">
+                            <div>
+                                filter by Technology used:
+                                <select id="tech" name="tech" class="bg-blue-200/70 hover:bg-blue-200 pl-2 rounded-lg text-base ml-2">
+                                    <option value="" selected disabled hidden> Select </option>
+                                    <!-- To be inserted through JS -->
+                                </select>
+                                <button id="add" class="ml-2 rounded-md bg-blue-200/80 disabled:bg-blue-200/60 disabled:hover:bg-blue-200/60 disabled:text-base/80 hover:bg-blue-200 text-base px-2"> Add Filter </button>
+                            </div>
 
-                        </div> -->
+                            <div id="filterList" class="flex">
+                                <!-- To be inserted through JS -->
+                            </div>
+                        </div>
 
-                        <div>
+                        <div id="showFilters" class="hidden">
+                            <div class="proj-sec pt-6" tabindex="0">
+                                <!-- <header style="display:none;">
+                                    <span> Web Development </span>
+                                    <span> 
+                                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
+                                        </svg>
+                                    </span>
+                                </header> -->
+                                <div id="display" class="flex">
+                                    <!-- To be inserted through JS -->                                    
+                                </div>
+                            </div>
+                        </div>
+
+                        <div id="allProjects">
                             <div id="web" class="proj-sec" tabindex="0">
                                 <header>
                                     <span> Web Development </span>
@@ -223,7 +250,7 @@
                     <svg class="animate-spin h-[3em] lg:h-[4em] w-auto opacity-60 mt-[40%] md:mt-[25%] lg:mt-[12%] text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
                         <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-                      </svg>
+                    </svg>
                 </div>
                 <div class="hidden">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Veniam omnis voluptates pariatur quae dignissimos, ratione exercitationem facilis dolore possimus hic beatae molestias commodi corrupti? Perferendis soluta impedit, voluptate enim iste quidem laudantium neque non? Qui suscipit ex, molestias voluptates rerum dolor minima reprehenderit voluptatum nihil adipisci nostrum dolore neque nulla expedita quibusdam numquam fugit cum fuga. Nisi unde quas recusandae mollitia eius dolorum autem maxime officiis nam, consequuntur, ratione saepe exercitationem quaerat eligendi reiciendis accusamus nihil. Aliquam deleniti rem enim omnis tempore illum necessitatibus dolorem accusantium aliquid deserunt excepturi voluptatem minus, laborum consectetur. Qui sint illo laborum obcaecati deleniti? Nisi?

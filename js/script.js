@@ -52,6 +52,7 @@ const data = {
     general: {}
 };
 let expanded = null;
+let currentFilter = [];
 
 async function getData(section) {
     let url = "/data/" + section + ".json";
@@ -223,6 +224,7 @@ function showProjects() {
 
     let component, name, links, tech, images;
     let projID = 1;
+    const techList = {};
 
     for (let sec of Object.keys(sections)) {
         document.querySelector('#' + sec + ' header').onclick = () => {
@@ -243,6 +245,9 @@ function showProjects() {
                 tech = "";
                 for (let x of project[name].techStack) {
                     tech += x + ", ";
+                    if (x in techList)
+                        techList[x].push(project);
+                    else techList[x] = [project];
                 }
                 tech = tech.slice(0, -2);
 
@@ -278,6 +283,146 @@ function showProjects() {
             sections[sec].lastElementChild.classList.add('hidden');
         }
     }
+    
+    async function filter() {
+        const optionTemplate = `<option value="$tech$"> $tech$ </option>`;
+        const filterArea = document.querySelector('#filter');
+        const filterList = document.querySelector('#filterList');
+        const dropdown = filterArea.querySelector('#tech');
+        const button = filterArea.querySelector('#add');
+        button.disabled = true;
+        const filterProjects = document.querySelector('#showFilters');
+        const filterProjectsDisplay = filterProjects.querySelector('#display');
+        const filterTemplate = `<span class="bg-blue-200/70 text-base/80 px-2 rounded-md border-[1px] border-blue-300 mr-2">
+                                    $tech$
+                                </span>`;
+        const clearBtnHTML = `
+                            <button id="clear" class="mr-2 flex items-center transition duration-150 transform motion-safe:hover:translate-y-1 opacity-70 hover:opacity-100">
+                                <p> Clear </p> 
+                                <svg version="1.1" class="stroke-current h-5 pl-2 w-auto text-white" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 130.2 130.2">
+                                    <circle class="path circle" stroke-width="6" stroke-miterlimit="10" cx="65.1" cy="65.1" r="62.1"/>
+                                    <line class="path line"stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="34.4" y1="37.9" x2="95.8" y2="92.3"/>
+                                    <line class="path line" stroke-width="6" stroke-linecap="round" stroke-miterlimit="10" x1="95.8" y1="38" x2="34.4" y2="92.2"/>
+                                </svg>
+                            </button>`;
+
+        function updateFilters() {
+            filterList.innerHTML = "";
+            let filter;
+            for (let tech of currentFilter) {
+                filter = filterTemplate.replace("$tech$", tech);
+                filterList.innerHTML += filter;
+            }
+            if (currentFilter.length > 0) {
+                filterList.innerHTML += clearBtnHTML;
+                const clearBtn = filterArea.querySelector('#clear');
+                clearBtn.addEventListener('click', () => {
+                    currentFilter = [];
+                    updateFilters();
+                });
+                document.querySelector('#allProjects').classList.add('hidden');
+                filterProjects.classList.remove('hidden');
+                filterProjectsDisplay.innerHTML = "";
+
+                let component, name, links, tech, images;
+                let projID2 = 1;
+                const displayed = [];
+                for (let x of currentFilter) {
+                    for (let project of techList[x]) {
+                        let temp = false
+                        for (y of displayed)
+                            if (project == y) {
+                                temp = true;
+                                break;
+                            }
+                        if (temp)
+                            continue;
+
+                        name = Object.keys(project)[0];
+
+                        tech = "";
+                        for (let y of project[name].techStack) {
+                            tech += y + ", ";
+                        }
+                        tech = tech.slice(0, -2);
+                    
+                        links = "";
+                        if (project[name].links.github)
+                            links += linkTemplate.replace("$linkName$", "GitHub")
+                                     .replace("$href$", project[name].links.github);
+                        if (project[name].links.hosted)
+                            links += linkTemplate.replace("$linkName$", "Hosted")
+                                     .replace("$href$", project[name].links.hosted);
+                        if (project[name].links.demo)
+                            links += linkTemplate.replace("$linkName$", "Demo")
+                                     .replace("$href$", project[name].links.demo);
+                    
+                        images = "";
+                        images += imageTemplate.replace("$imagepath$", project[name].images.main);
+                        for (let image of project[name].images.slides) {
+                            images += imageTemplate.replace("$imagepath$", image);
+                        }
+
+                        component = template
+                                    .replace("$id$", projID2)
+                                    .replace("$images$", images)
+                                    .replace("$name$", name)
+                                    .replace("$description$", project[name].desc)
+                                    .replace("$link$", links)
+                                    .replace("$techstack$", tech);
+                    
+                        filterProjectsDisplay.innerHTML += component;
+                    
+                        projID2 += 1;
+                        displayed.push(project);
+                    }
+                }
+                filterProjectsDisplay.lastElementChild.classList.add('hidden');
+
+                let project;
+                for (let i = 1; i <= projID2; i++) {
+                    project = document.querySelector('#proj-' + i);
+                    const leftBtn = project.querySelector('.left-btn');
+                    const rightBtn = project.querySelector('.right-btn');
+                    const expandBtn = project.querySelector('.expand');
+                    const slides = project.querySelector('.slides');
+
+                    slideshow(slides, leftBtn, rightBtn, expandBtn);
+                }
+            }
+            else {
+                filterProjects.classList.add('hidden');
+                document.querySelector('#allProjects').classList.remove('hidden');
+            }
+        }
+
+        let option;
+        for (let tech of Object.keys(techList).sort()) {
+            option = optionTemplate
+                     .replaceAll('$tech$', tech);
+            dropdown.innerHTML += option;
+        }
+
+        dropdown.addEventListener("change", () => {
+            button.disabled = false;
+        });
+        button.addEventListener('click', () => {
+            let tech = dropdown.value;
+            let temp = true;
+            for (let value of currentFilter) {
+                if (tech === value) {
+                    temp = false;
+                    break;
+                }
+            }
+            if (temp)
+                currentFilter = [tech, ...currentFilter];
+
+            updateFilters();
+        });
+    }
+
+    filter();
 
 
     let project;
