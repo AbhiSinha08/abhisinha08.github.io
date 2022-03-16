@@ -111,7 +111,8 @@
     }
 
     .social {
-        @apply px-8 py-2 md:hover:bg-gray-400/30 md:motion-safe:hover:scale-105 transition duration-200 rounded-full;
+        @apply px-8 py-2 md:hover:bg-gray-400/30 md:motion-safe:hover:scale-105
+            transition duration-200 rounded-full;
     }
     .social svg {
         @apply h-10 md:h-16 w-auto fill-current text-white stroke-current;
