@@ -23,6 +23,10 @@ module.exports = {
             gr4: {
                 1: '#7F00FF',
                 2: '#E100FF'
+            },
+            gr5: {
+                1: '#fcac22',
+                2: '#F37335'
             }
         },
         fontFamily : {

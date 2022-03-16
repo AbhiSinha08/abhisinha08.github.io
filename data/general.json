@@ -1,5 +1,11 @@
 {
-    "comments": ["images path: data/images/"],
+    "comments": ["images path: data/images/",
+                "resume path: data/"],
 
-    "general": {}
+    "general": {
+        "name": "Abhinav Kumar",
+        "intro": "I am Abhinav Kumar, a full-stack web developer with a diverse set of skills.",
+        "resume": "Abhinav_Kumar.pdf",
+        "photo": "photo.jpg"
+    }
 }

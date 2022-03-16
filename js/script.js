@@ -51,6 +51,7 @@ const data = {
     about: {},
     general: {}
 };
+let expanded = null;
 
 async function getData(section) {
     let url = "/data/" + section + ".json";
@@ -64,13 +65,15 @@ async function load(section, callback) {
         data[section] = await getData(section);
     }
     const displayArea = document.querySelector('#'+section + ' > .hidden');
-    displayArea.classList.remove("hidden");
-    document.querySelector('#'+section + ' > #loading').classList.add("hidden");
+    if (displayArea)
+        displayArea.classList.remove("hidden");
+    const loading = document.querySelector('#'+section + ' > #loading')
+    if (loading)
+        loading.classList.add("hidden");
 
     // console.log(data);
-
-    if (callback)
-        callback();
+    
+    callback();
 }
 
 function showSkills() {
@@ -156,7 +159,9 @@ function showProjects() {
         }
     }
 
-    async function slides(images, left, right) {
+    async function slideshow(slides, left, right, expand) {
+        const images = slides.querySelectorAll(".proj-image");
+
         for (let image of images) {
             image.classList.add('hidden');
         }
@@ -172,23 +177,31 @@ function showProjects() {
     
         left.addEventListener('click', () => {change(-1);});
         right.addEventListener('click', () => {change(1);});
+
+        expand.addEventListener('click', () => {
+            left.classList.toggle('bg-gray-800/80');
+            right.classList.toggle('bg-gray-800/80');
+            slides.classList.toggle('expanded');
+            expanded = slides;
+        })
     }
 
     const template = `
                 <div id="proj-$id$" class="flex flex-col lg:flex-row lg:flex-wrap justify-between h-[55vh] lg:h-[45vh] min-w-[90%] sm:min-w-[70%] sm:max-w-[80%] md:min-w-[50%] md:max-w-[70%] lg:w-[50%] snap-start snap-always">
-                    <div class="flex flex-col flex-grow h-auto w-full lg:w-[60%] lg:flex-grow-0 lg:order-1">    
+                    <div class="flex slides transform flex-col flex-grow h-auto w-full lg:w-[60%] lg:flex-grow-0 lg:order-1">    
                         <div class="flex justify-center relative w-full lg:w-auto max-h-[27vh]">
-                            <button class="left-btn absolute z-[1] left-0 top-0 flex flex-col justify-center h-full">
+                            <button class="left-btn absolute z-30 left-0 top-0 flex flex-col justify-center h-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-auto fill-transparent stroke-gray-400/90 rotate-90" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
                                 </svg>
                             </button>  
                             $images$
-                            <button class="right-btn absolute z-[1] right-0 top-0 flex flex-col justify-center h-full">
+                            <button class="right-btn absolute z-30 right-0 top-0 flex flex-col justify-center h-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-auto fill-transparent stroke-gray-400/90 -rotate-90" viewBox="0 0 24 24">
                                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 9l-7 7-7-7" />
                                 </svg>
-                            </button> 
+                            </button>
+                            <button class="expand absolute z-20 h-full w-full top-0 left-0"> </button>
                         </div>
                         <div class="text-bold font-nunito text-2xl text-center py-1 px-2"> $name$ </div>
                     </div>
@@ -205,8 +218,8 @@ function showProjects() {
                 </div>
                 <span class="py-4 h-[55vh] lg:h-[45vh] rounded-2xl bg-white/20 min-w-[2px]"> </span>
                 `;
-    const linkTemplate = `<a href="$href$" class="underline underline-offset-[3px] text-blue-900"> $linkName$ </a>`;
-    const imageTemplate = `<img src="./data/images/$imagepath$" alt="image" class="proj-image rounded-md">`;
+    const linkTemplate = `<a href="$href$" class="text-white px-3 py-1 bg-gradient-to-r from-gr5-1/80 to-gr5-2/80 md:hover:scale-x-105 duration-100 rounded-2xl"> $linkName$ </a>`;
+    const imageTemplate = `<img src="./data/images/$imagepath$" alt="image" class="proj-image rounded-md object-contain">`;
 
     let component, name, links, tech, images;
     let projID = 1;
@@ -267,23 +280,26 @@ function showProjects() {
     }
 
 
-    projects = []
-    for (let i = 1; i <= number; i++)
-        projects.push(document.querySelector('#proj-' + i));
-
-    
-    for (project of projects) {
-        const imageList = project.querySelectorAll(".proj-image");
+    let project;
+    for (let i = 1; i <= number; i++) {
+        project = document.querySelector('#proj-' + i);
         const leftBtn = project.querySelector('.left-btn');
         const rightBtn = project.querySelector('.right-btn');
+        const expandBtn = project.querySelector('.expand');
+        const slides = project.querySelector('.slides');
 
-        slides(imageList, leftBtn, rightBtn);
+        slideshow(slides, leftBtn, rightBtn, expandBtn);
     }
 }
 
+function showGeneral() {
+    const contact = document.querySelector('#contact');
+    const home = document.querySelector("#home");
+    // TODO
+}
 
 document.addEventListener('DOMContentLoaded', () => {
-    // load("general");
+    load("general", showGeneral);
     load("skills", showSkills);
     load("projects", showProjects);
     // load("about", showAbout);
@@ -296,6 +312,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const content = document.querySelector('#content');
     content.addEventListener("click", () => {
         nav.classList.add("hidden");
+        if (expanded)
+            expanded.classList.remove('hidden');
     });
 
     const navButtons = document.querySelectorAll(".nav-btn, #home-btn");
