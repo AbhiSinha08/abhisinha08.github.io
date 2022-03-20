@@ -8,7 +8,7 @@
                     "desc": "This website! <br> Personal Portfolio website built from scratch using TailwindCSS and Vanilla JavaScript.",
                     "images": {
                         "main": "portfolio1.png",
-                        "slides": ["portfolio2.png"]
+                        "slides": ["portfolio2.png", "portfolio3.png", "portfolio4.png"]
                     },
                     "techStack": ["JavaScript", "HTML", "TailwindCSS"],
                     "links": {
