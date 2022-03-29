@@ -34,6 +34,21 @@
                 }
             },
             {
+                "Hotel Management System": {
+                    "desc": "DBMS Course Project. A Hotel Management System Web App built to ease managing details and status of any hotel. Frontend made using TailwindCSS and JS. Backend using Python Flask with a MySQL connection.",
+                    "images": {
+                        "main": "hms1.png",
+                        "slides": ["hms2.png", "hms3.png"]
+                    },
+                    "techStack": ["Python", "Flask", "MySQL", "JavaScript", "HTML", "TailwindCSS"],
+                    "links": {
+                        "github": "https://github.com/AbhiSinha08/HotelManagementSystem",
+                        "hosted": null,
+                        "demo": null
+                    }
+                }
+            },
+            {
                 "Address Formatter": {
                     "desc": "An API + web-based interface to format addresses to remove repetitive area names, have proper capitalization and be less bulkier. It takes the raw address same as in aadhar portal's pattern.",
                     "images": {
