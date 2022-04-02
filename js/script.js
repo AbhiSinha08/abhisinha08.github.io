@@ -443,11 +443,15 @@ function showGeneral() {
     // TODO
 }
 
+function showAbout() {
+    
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     load("general", showGeneral);
     load("skills", showSkills);
     load("projects", showProjects);
-    // load("about", showAbout);
+    load("about", showAbout);
     hello();
 
     const nav = document.querySelector('#nav');

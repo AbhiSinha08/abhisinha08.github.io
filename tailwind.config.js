@@ -27,6 +27,10 @@ module.exports = {
             gr5: {
                 1: '#fcac22',
                 2: '#F37335'
+            },
+            gr6: {
+                1: '#D1913C',
+                2: '#FFD194'
             }
         },
         fontFamily : {

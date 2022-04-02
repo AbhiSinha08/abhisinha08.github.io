@@ -1,5 +1,28 @@
 {
     "comments": ["images path: data/images/"],
 
-    "about": {}
+    "about": {
+        "history": [
+            {
+                "timeline": "2020",
+                "head": "Completed Senior Secondary Schooling",
+                "place": "Himalayan International School, Patna",
+                "additional": [
+                    "Class X CBSE Board - 93.8%",
+                    "Class XII CBSE Board - 93.6%"
+                ]
+            },
+            {
+                "timeline": "2020 - Present",
+                "head": "Pursuing B.Tech in Computer Science & Engineering",
+                "place": "Indian Institute of Informatio Tehnology, Guwahati",
+                "additional": [
+                    "Currently in Second Year",
+                    "Programming Club Coordinator since Sep '21",
+                    "First Year CPI: 9.64"
+                ]
+            }
+        ],
+        "bio": "Hey there! I am currently a sophomore with an eager to learn various development skills. I am enthusiastic in Web3 and Blockchain Technologies and currently learning the same. Besides coding, I love web and movie series(es). My hobbies include video games and playing Guitar. Feel free to contact me for anything :)"
+    }
 }
