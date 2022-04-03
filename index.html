@@ -17,7 +17,7 @@
 </head>
 
 <body class="bg-base font-sans selection:bg-green-500/40">
-    <ul class="fixed h-screen w-screen hidden motion-safe:sm:block top-0 left-0 overflow-hidden">
+    <ul class="fixed h-screen w-screen hidden motion-safe:md:block top-0 left-0 overflow-hidden">
             <li class="shooting-star top-[40%] left-0 bg-red-400 before:from-red-400"></li>
             <li class="shooting-star top-[20%] left-0 bg-blue-600 before:from-blue-600"></li>
             <li class="shooting-star -top-[12px] left-[5%] bg-green-300 before:from-green-300"></li>
@@ -68,7 +68,7 @@
                         I am Abhinav Kumar, a full-stack web developer with a diverse set of skills.
                     </div>
     
-                    <button id="resume" class="cursor-pointer mx-auto lg:mx-0 flex py-5 px-16 sm:px-10 md:px-16 rounded-full text-3xl font-semibold my-10 bg-gradient-to-r from-gr1-1 via-gr1-2 to-gr1-3 hover:scale-x-105 duration-300">
+                    <button id="resume" class="cursor-pointer mx-auto lg:mx-0 flex py-5 px-16 sm:px-10 md:px-16 rounded-full text-3xl font-semibold my-10 bg-gradient-to-r from-gr1-1 via-gr1-2 to-gr1-3 lg:motion-safe:animate-gradient hover:scale-x-105 duration-300">
                         <svg xmlns="http://www.w3.org/2000/svg" class="h-[36px] mr-6 sm:mr-2 md:mr-6 stroke-white fill-transparent" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
                           </svg>
@@ -248,22 +248,22 @@
                     </svg>
                 </div>
                 <div class="hidden w-full h-[75%]">
-                    <div class="group m-1 h-[65%] lg:h-[60%]">
-                        <div class="flex justify-start lg:motion-safe:opacity-80 lg:motion-safe:group-hover:opacity-90 transition duration-200">
+                    <div class="group m-1 h-full relative sm:h-[65%] lg:h-[60%]">
+                        <div class="flex justify-start lg:motion-safe:opacity-80 lg:motion-safe:group-hover:opacity-90 transition duration-200 rotate-90 sm:rotate-0 relative top-32 sm:top-0 left-28 sm:left-0">
                             <div class="w-24 transform rotate-45 flex relative bottom-[1.8rem] -mr-[1.35rem]">
                                 <div class="border-b-[1rem] border-b-gr6-1 border-l-[1rem] border-l-transparent"></div>
                                 <div class="w-20 h-4 bg-gr6-1 transform scale-x-[1.03]"></div>
                                 <div class="border-b-[0.1rem] border-b-gr6-1 border-r-[0.35rem] border-r-transparent"></div>
                             </div>
-                            <div id="timeline" class="h-4 lg:motion-safe:group-hover:scale-y-110 flex justify-evenly gap-4 transition duration-200 bg-gradient-to-r from-gr6-1 to-gr6-2 w-[80%] rounded-r-full">
+                            <div id="timeline" class="h-4 lg:motion-safe:group-hover:scale-y-110 flex justify-evenly gap-4 transition duration-200 bg-gradient-to-r from-gr6-1 to-gr6-2 w-[27rem] sm:w-[80%] rounded-r-full">
                                 <!-- To be inserted through JS -->
                             </div>
                         </div>
-                        <div id="events" class="ml-[4.65rem] h-auto pb-4 flex justify-evenly gap-4 w-[80%]">
+                        <div id="events" class="absolute top-12 right-[4.5rem] sm:static sm:top-0 sm:right-0 ml-[4.65rem] h-[27rem] sm:h-auto pb-4 flex flex-col sm:flex-row justify-evenly gap-8 sm:gap-4 w-[80%]">
                             <!-- To be inserted through JS -->
                         </div>
                     </div>
-                    <div class="w-full h-[35%] lg:h-[40%] flex font-nunito">
+                    <div class="w-full h-[35%] lg:h-[40%] hidden sm:flex font-nunito">
                         <div class="group w-[55%] mr-1 h-full text-center flex flex-col justify-center items-center text-lg lg:text-xl lg:font-light">
                             <div class="transform transition duration-300 lg:motion-safe:group-hover:-translate-y-2 bg-gradient-to-r from-gr1-1 via-gr1-2 to-gr1-3 w-[50%] h-1 rounded-full xl:mb-4"></div>
                             <p id="bio" class="py-2 xl:py-0"></p>

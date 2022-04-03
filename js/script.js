@@ -191,7 +191,7 @@ function showProjects() {
     }
 
     const template = `
-                <div id="proj-$id$" class="flex flex-col lg:flex-row lg:flex-wrap justify-between h-[55vh] lg:h-[45vh] min-w-[90%] sm:min-w-[70%] sm:max-w-[80%] md:min-w-[50%] md:max-w-[70%] lg:w-[50%] snap-start snap-always">
+                <div id="proj-$id$" class="flex flex-col lg:flex-row lg:flex-wrap justify-between h-[55vh] lg:h-[45vh] min-w-[90%] sm:min-w-[70%] sm:max-w-[80%] md:min-w-[50%] md:max-w-[70%] lg:w-[50%]">
                     <div class="flex slides transform flex-col flex-grow h-auto w-full lg:w-[60%] lg:flex-grow-0 lg:order-1">    
                         <div class="flex justify-center relative w-full lg:w-auto max-h-[27vh]">
                             <button class="left-btn absolute z-30 left-0 top-0 flex flex-col justify-center h-full">
@@ -215,14 +215,14 @@ function showProjects() {
                             <span class="hidden xl:block leading-[4rem] font-semibold"> Technologies Used: </span>
                             $techstack$
                         </p>
-                        <div class="flex lg:flex-col justify-around lg:justify-start lg:items-center xl:flex-row xl:justify-around lg:gap-2 font-mono px-2 lg:px-4 pb-1">
+                        <div class="flex lg:flex-col justify-around lg:justify-start lg:items-center xl:flex-row xl:justify-around lg:gap-2 font-nunito px-2 lg:px-4 pb-1">
                             $link$
                         </div>
                     </div>
                 </div>
                 <span class="py-4 h-[55vh] lg:h-[45vh] rounded-2xl bg-white/20 min-w-[2px]"> </span>
                 `;
-    const linkTemplate = `<a href="$href$" class="text-white px-3 py-1 bg-gradient-to-r from-gr5-1/80 to-gr5-2/80 md:hover:scale-x-105 duration-100 rounded-2xl"> $linkName$ </a>`;
+    const linkTemplate = `<a href="$href$" class="text-white px-3 py-1 bg-orange-400/80 md:hover:bg-orange-500 focus:bg-orange-500 transition duration-100 rounded-lg"> $linkName$ </a>`;
     const imageTemplate = `<img src="./data/images/$imagepath$" alt="image" class="proj-image rounded-md object-contain">`;
 
     let component, name, links, tech, images;
@@ -459,7 +459,7 @@ function showAbout() {
     const section = document.querySelector("#about");
 
     const dot = `<div class="h-full w-52 flex justify-center items-center">
-                    <span class="rounded-full lg:motion-safe:group-hover:scale-y-[0.91] h-2 w-2 bg-indigo-800"></span>
+                    <span class="hidden sm:block rounded-full lg:motion-safe:group-hover:scale-y-[0.91] h-2 w-2 bg-indigo-800"></span>
                 </div>`;
     const timeline = section.querySelector('#timeline');
     const events = section.querySelector('#events');
@@ -467,19 +467,22 @@ function showAbout() {
     const additionalTemplate = `<span> <div class="w-1 inline-flex"> <div class="h-1 w-1 relative bottom-[0.15rem] rounded-full bg-white/80"></div> </div>
                                     $data$
                                 </span>`;
-    const template = `<div class="flex flex-col justify-start items-center w-52">
-                          <span class="h-8 w-[2px] my-2 bg-gray-300 rounded-full transform transition duration-200 lg:motion-safe:scale-y-0 lg:motion-safe:group-hover:scale-y-100"></span>
-                          <span class=" lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 text-yellow-400 font-nunito font-bold $timefontsize$ lg:motion-safe:opacity-80 lg:motion-safe:group-hover:opacity-100 transform lg:motion-safe:group-hover:scale-110 transition duration-200"> $time$ </span>
-                          <span class="transform transition duration-300 lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 text-center font-nunito $headfontsize$ leading-tight"> $head$ </span>
-                          <div class="transform transition duration-300 lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 flex text-white/70 items-start">
-                              <svg class="fill-transparent stroke-white/70 h-3 w-5 mt-1 stroke-[20]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 395.71 395.71" xml:space="preserve">
-                                  <path d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
-                              </svg>
-                              <p class="text-sm leading-tight pl-1"> $place$ </p>
-                          </div>
-                          <div class="transform transition duration-300 lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 mt-1 text-sm italic text-white/90 flex flex-col items-start gap-[0.15rem]">
-                              $additional$
-                          </div>
+    const template = `<div class="flex sm:block items-center">
+                        <div class="flex flex-col justify-start items-center w-auto sm:w-52 sm:h-auto">
+                            <span class="hidden sm:inline-block h-8 w-[2px] my-2 bg-gray-300 rounded-full transform transition duration-200 lg:motion-safe:scale-y-0 lg:motion-safe:group-hover:scale-y-100"></span>
+                            <span class=" lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 text-yellow-400 font-nunito font-bold $timefontsize$ lg:motion-safe:opacity-80 lg:motion-safe:group-hover:opacity-100 transform lg:motion-safe:group-hover:scale-110 transition duration-200"> $time$ </span>
+                            <span class="transform transition duration-300 lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 text-center font-nunito $headfontsize$ leading-tight"> $head$ </span>
+                            <div class="transform transition duration-300 lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 flex text-white/70 items-start">
+                                <svg class="fill-transparent stroke-white/70 h-3 w-5 mt-1 stroke-[20]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 395.71 395.71" xml:space="preserve">
+                                    <path d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+                                </svg>
+                                <p class="text-sm leading-tight pl-1"> $place$ </p>
+                            </div>
+                            <div class="transform transition duration-300 lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 mt-1 text-sm italic text-white/90 flex flex-col items-start gap-[0.15rem]">
+                                $additional$
+                            </div>
+                        </div>
+                        <span class="sm:hidden w-8 h-[2px] mx-2 bg-gray-300 rounded-full"></span>
                       </div>`;
 
     let additionalData, element, timeFont, headFont;

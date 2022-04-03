@@ -4,11 +4,18 @@
     "about": {
         "history": [
             {
+                "timeline": "2018",
+                "head": "Completed Secondary Schooling",
+                "place": "DAV Public School, Muzaffarpur",
+                "additional": [
+                    "Class X CBSE Board - 93.8%"
+                ]
+            },
+            {
                 "timeline": "2020",
                 "head": "Completed Senior Secondary Schooling",
                 "place": "Himalayan International School, Patna",
                 "additional": [
-                    "Class X CBSE Board - 93.8%",
                     "Class XII CBSE Board - 93.6%"
                 ]
             },

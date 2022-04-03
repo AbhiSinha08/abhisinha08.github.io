@@ -25,8 +25,8 @@ module.exports = {
                 2: '#E100FF'
             },
             gr5: {
-                1: '#fcac22',
-                2: '#F37335'
+                1: '#136a8a',
+                2: '#267871'
             },
             gr6: {
                 1: '#22c1c3',
@@ -51,7 +51,7 @@ module.exports = {
         animation: {
             stars: 'shooting-star linear infinite',
             blink: 'blink 1.2s linear infinite',
-            gradient: 'gradient 2.5s linear infinite',
+            gradient: 'gradient 4s linear infinite',
             'fade-l': 'fade-l 0.6s ease-out',
             'fade-r': 'fade-r 0.6s ease-out',
             'fade-b': 'fade-b 0.6s ease-out'
@@ -78,11 +78,11 @@ module.exports = {
             'gradient': {
                 '0%, 100%': {
                     'background-position': '0% 50%',
-                    'background-size': '200%'
+                    'background-size': '300%'
                 },
                 '50%': {
                     'background-position': '100% 50%',
-                    'background-size': '200%'
+                    'background-size': '300%'
                 }
             },
             'fade-l': {
