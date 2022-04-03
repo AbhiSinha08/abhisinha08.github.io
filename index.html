@@ -138,11 +138,13 @@
                         <div id="filter" class="font-nunito hidden md:block text-lg lg:flex lg:justify-between mb-4">
                             <div>
                                 filter by Technology used:
-                                <select id="tech" name="tech" class="bg-blue-200/70 hover:bg-blue-200 pl-2 rounded-lg text-base ml-2">
+                                <select id="tech" name="tech" class="bg-blue-200/70 hover:bg-blue-200 pl-2 rounded-lg text-base ml-2 transition duration-150">
                                     <option value="" selected disabled hidden> Select </option>
                                     <!-- To be inserted through JS -->
                                 </select>
-                                <button id="add" class="ml-2 rounded-md bg-blue-200/80 disabled:bg-blue-200/60 disabled:hover:bg-blue-200/60 disabled:text-base/80 hover:bg-blue-200 text-base px-2"> Add Filter </button>
+                                <button id="add" class="ml-2 rounded-md bg-blue-200/80 disabled:bg-blue-200/60 disabled:hover:bg-blue-200/60 disabled:text-base/80 disabled:cursor-not-allowed hover:bg-blue-200 text-base px-2 transition duration-150">
+                                    Add Filter
+                                </button>
                             </div>
 
                             <div id="filterList" class="flex">
@@ -230,6 +232,7 @@
                             </div>
                         </div>
                     </div>
+                    <div id="foot" class="rounded-full mx-auto mt-[15vh] mb-4 h-3 w-[35%] bg-gradient-to-r from-gr7-1 to-gr7-2 motion-safe:animate-gradient"></div>
                 </div>
             </section>
 
@@ -245,17 +248,32 @@
                     </svg>
                 </div>
                 <div class="hidden w-full h-[75%]">
-                    <div class="group">
-                        <div class="flex justify-start opacity-80 group-hover:opacity-90 transition duration-200">
+                    <div class="group m-1 h-[65%] lg:h-[60%]">
+                        <div class="flex justify-start lg:motion-safe:opacity-80 lg:motion-safe:group-hover:opacity-90 transition duration-200">
                             <div class="w-24 transform rotate-45 flex relative bottom-[1.8rem] -mr-[1.35rem]">
                                 <div class="border-b-[1rem] border-b-gr6-1 border-l-[1rem] border-l-transparent"></div>
                                 <div class="w-20 h-4 bg-gr6-1 transform scale-x-[1.03]"></div>
                                 <div class="border-b-[0.1rem] border-b-gr6-1 border-r-[0.35rem] border-r-transparent"></div>
                             </div>
-                            <div class="h-4 group-hover:scale-y-110 transition duration-200 bg-gradient-to-r from-gr6-1 to-gr6-2 w-[80%] rounded-r-full"></div>
+                            <div id="timeline" class="h-4 lg:motion-safe:group-hover:scale-y-110 flex justify-evenly gap-4 transition duration-200 bg-gradient-to-r from-gr6-1 to-gr6-2 w-[80%] rounded-r-full">
+                                <!-- To be inserted through JS -->
+                            </div>
+                        </div>
+                        <div id="events" class="ml-[4.65rem] h-auto pb-4 flex justify-evenly gap-4 w-[80%]">
+                            <!-- To be inserted through JS -->
                         </div>
                     </div>
-
+                    <div class="w-full h-[35%] lg:h-[40%] flex font-nunito">
+                        <div class="group w-[55%] mr-1 h-full text-center flex flex-col justify-center items-center text-lg lg:text-xl lg:font-light">
+                            <div class="transform transition duration-300 lg:motion-safe:group-hover:-translate-y-2 bg-gradient-to-r from-gr1-1 via-gr1-2 to-gr1-3 w-[50%] h-1 rounded-full xl:mb-4"></div>
+                            <p id="bio" class="py-2 xl:py-0"></p>
+                            <div class="transform transition duration-300 lg:motion-safe:group-hover:translate-y-2 bg-gradient-to-r from-gr1-1 via-gr1-2 to-gr1-3 w-[50%] h-1 rounded-full xl:mt-4"></div>
+                        </div>
+                        <div id="achievements" class="w-[40%] m-1 h-full text-lg">
+                            <span class="text-2xl font-semibold opacity-80"> Recent Achievements: </span>
+                            <hr class="rounded-full w-[50%] mt-1 mb-2 border-[1px] opacity-30">
+                        </div>
+                    </div>
                 </div>
             </section>
 
@@ -291,7 +309,7 @@
                                 </a>
                             </div>
                         </div>
-                        <hr class="-mt-1 mb-3 md:-mt-4 rounded-full opacity-20 border-[1.5px] mx-auto w-[80%]">
+                        <div class="divider"> </div>
                         <div>
                             <p> Check out my projects: </p>
                             <div class="flex w-full justify-evenly mb-4 md:mb-8">
@@ -302,7 +320,7 @@
                                 </a>
                             </div>
                         </div>
-                        <hr class="-mt-1 mb-3 md:-mt-4 rounded-full opacity-20 border-[1.5px] mx-auto w-[80%]">
+                        <div class="divider"> </div>
                         <div>
                             <p> Drop me a text: </p>
                             <div class="flex w-full justify-evenly mb-4 md:mb-8">
@@ -319,7 +337,7 @@
                                 </a>
                             </div>
                         </div>
-                        <hr class="-mt-1 mb-3 md:-mt-4 rounded-full opacity-20 border-[1.5px] mx-auto w-[80%]">
+                        <div class="divider"> </div>
                         <div>
                             <p> Write to me: </p>
                             <div class="flex w-full justify-evenly mb-4 md:mb-8">

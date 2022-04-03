@@ -183,6 +183,9 @@ function showProjects() {
             left.classList.toggle('bg-gray-800/80');
             right.classList.toggle('bg-gray-800/80');
             slides.classList.toggle('expanded');
+            // srcroll x at the start of slides.parent.parent
+            const projList = slides.parentElement.parentElement;
+            projList.scrollLeft = 0;
             expanded = slides;
         })
     }
@@ -226,12 +229,19 @@ function showProjects() {
     let projID = 1;
     const techList = {};
 
+    const foot = document.querySelector('#foot');
+
     for (let sec of Object.keys(sections)) {
         document.querySelector('#' + sec + ' header').onclick = () => {
             hideAll(sections[sec]);
             sections[sec].classList.toggle('hidden');
             sections[sec].classList.toggle('flex');
-            document.querySelector('#' + sec + ' header svg').classList.toggle('rotate-180');
+            const svg = document.querySelector('#' + sec + ' header svg');
+            svg.classList.toggle('rotate-180');
+            if (svg.classList.contains('rotate-180')) {
+                foot.classList.add('hidden');
+            }
+            else foot.classList.remove('hidden');
         }
 
         number += data.projects[sec].length;
@@ -321,6 +331,7 @@ function showProjects() {
                     updateFilters();
                 });
                 document.querySelector('#allProjects').classList.add('hidden');
+                foot.classList.add('hidden');
                 filterProjects.classList.remove('hidden');
                 filterProjectsDisplay.innerHTML = "";
 
@@ -393,6 +404,7 @@ function showProjects() {
             else {
                 filterProjects.classList.add('hidden');
                 document.querySelector('#allProjects').classList.remove('hidden');
+                foot.classList.remove('hidden');
             }
         }
 
@@ -444,7 +456,75 @@ function showGeneral() {
 }
 
 function showAbout() {
+    const section = document.querySelector("#about");
+
+    const dot = `<div class="h-full w-52 flex justify-center items-center">
+                    <span class="rounded-full lg:motion-safe:group-hover:scale-y-[0.91] h-2 w-2 bg-indigo-800"></span>
+                </div>`;
+    const timeline = section.querySelector('#timeline');
+    const events = section.querySelector('#events');
+
+    const additionalTemplate = `<span> <div class="w-1 inline-flex"> <div class="h-1 w-1 relative bottom-[0.15rem] rounded-full bg-white/80"></div> </div>
+                                    $data$
+                                </span>`;
+    const template = `<div class="flex flex-col justify-start items-center w-52">
+                          <span class="h-8 w-[2px] my-2 bg-gray-300 rounded-full transform transition duration-200 lg:motion-safe:scale-y-0 lg:motion-safe:group-hover:scale-y-100"></span>
+                          <span class=" lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 text-yellow-400 font-nunito font-bold $timefontsize$ lg:motion-safe:opacity-80 lg:motion-safe:group-hover:opacity-100 transform lg:motion-safe:group-hover:scale-110 transition duration-200"> $time$ </span>
+                          <span class="transform transition duration-300 lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 text-center font-nunito $headfontsize$ leading-tight"> $head$ </span>
+                          <div class="transform transition duration-300 lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 flex text-white/70 items-start">
+                              <svg class="fill-transparent stroke-white/70 h-3 w-5 mt-1 stroke-[20]" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 395.71 395.71" xml:space="preserve">
+                                  <path d="M197.849,0C122.131,0,60.531,61.609,60.531,137.329c0,72.887,124.591,243.177,129.896,250.388l4.951,6.738 c0.579,0.792,1.501,1.255,2.471,1.255c0.985,0,1.901-0.463,2.486-1.255l4.948-6.738c5.308-7.211,129.896-177.501,129.896-250.388 C335.179,61.609,273.569,0,197.849,0z M197.849,88.138c27.13,0,49.191,22.062,49.191,49.191c0,27.115-22.062,49.191-49.191,49.191 c-27.114,0-49.191-22.076-49.191-49.191C148.658,110.2,170.734,88.138,197.849,88.138z"/>
+                              </svg>
+                              <p class="text-sm leading-tight pl-1"> $place$ </p>
+                          </div>
+                          <div class="transform transition duration-300 lg:motion-safe:-translate-y-8 lg:motion-safe:group-hover:translate-y-0 mt-1 text-sm italic text-white/90 flex flex-col items-start gap-[0.15rem]">
+                              $additional$
+                          </div>
+                      </div>`;
+
+    let additionalData, element, timeFont, headFont;
+    for (let item of data.about.history) {
+        timeline.innerHTML += dot;
+        additionalData = "";
+        for (let data of item.additional) {
+            additionalData += additionalTemplate
+                              .replace("$data$", data);
+        }
+        if (item.timeline.length > 6)
+            timeFont = "text-2xl";
+        else timeFont = "text-4xl";
+        if (item.head.length > 40)
+            headFont = "";
+        else headFont = "text-lg";
+        element = template
+                  .replace("$time$", item.timeline)
+                  .replace("$timefontsize$", timeFont)
+                  .replace("$head$", item.head)
+                  .replace("$headfontsize$", headFont)
+                  .replace("$place$", item.place)
+                  .replace("$additional$", additionalData);
+        events.innerHTML += element;
+    }
+
+    section.querySelector('#bio').innerHTML = data.about.bio;
+
+    const achievements = section.querySelector('#achievements');
+    const achievementsTemplate = `<p class="leading-tight"> <div class="w-3 mr-2 inline-flex"> <div class="h-1 w-3 relative bottom-[0.2rem] rounded-full bg-white/60"></div> </div>
+                                      $achievement$
+                                  </p>`;
     
+    if (data.about.achievements.length == 0) {
+        achievements.classList.add('hidden');
+        achievements.parentElement.classList.add('justify-center');
+    }
+    else {
+        for (let achievement of data.about.achievements) {
+            element = achievementsTemplate
+                      .replace("$achievement$", achievement);
+            achievements.innerHTML += element;
+        }
+        achievements.parentElement.classList.add('justify-between');
+    }
 }
 
 document.addEventListener('DOMContentLoaded', () => {

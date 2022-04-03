@@ -29,9 +29,18 @@ module.exports = {
                 2: '#F37335'
             },
             gr6: {
-                1: '#D1913C',
-                2: '#FFD194'
-            }
+                1: '#22c1c3',
+                2: '#fdbb2d'
+            },
+            gr7: {
+                1: '#FC466B',
+                2: '#3F5EFB'
+            },
+            gr8: {
+                1: '#A770EF',
+                2: '#CF8BF3',
+                3: '#FDB99B'
+            },
         },
         fontFamily : {
             baloo: ["'Baloo Bhaijaan 2'", 'sans-serif'],
@@ -42,6 +51,7 @@ module.exports = {
         animation: {
             stars: 'shooting-star linear infinite',
             blink: 'blink 1.2s linear infinite',
+            gradient: 'gradient 2.5s linear infinite',
             'fade-l': 'fade-l 0.6s ease-out',
             'fade-r': 'fade-r 0.6s ease-out',
             'fade-b': 'fade-b 0.6s ease-out'
@@ -63,6 +73,16 @@ module.exports = {
                 },
                 '30%, 80%': {
                     opacity: '0'
+                }
+            },
+            'gradient': {
+                '0%, 100%': {
+                    'background-position': '0% 50%',
+                    'background-size': '200%'
+                },
+                '50%': {
+                    'background-position': '100% 50%',
+                    'background-size': '200%'
                 }
             },
             'fade-l': {

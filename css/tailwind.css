@@ -87,7 +87,8 @@
         @apply bg-custom-green/70 border-[1.5px] lg:border-[0.5px] lg:hover:border-[1.5px]
         border-custom-green backdrop-filter backdrop-blur-sm text-lg font-semibold
         px-6 my-2 lg:my-3 pb-1 focus:ring-2 focus:ring-white lg:focus:ring-0 rounded-lg
-        shadow-lg shadow-custom-green/40 lg:motion-safe:opacity-90 lg:motion-safe:hover:opacity-100;
+        shadow-lg shadow-custom-green/40 lg:motion-safe:opacity-90 lg:motion-safe:hover:opacity-100
+        transition duration-200;
     }
     .proj-sec header {
         @apply text-base text-xl font-nunito flex justify-between py-2 cursor-pointer;
@@ -98,7 +99,7 @@
     .proj-sec > div {
         /* flex applied through js */
         @apply pb-5 overflow-x-auto w-full gap-4 md:gap-8 lg:gap-16 snap-x snap-mandatory
-            transform transition duration-200 overflow-y-hidden;
+            transform transition duration-200 overflow-y-hidden scroll-smooth;
 
         scrollbar-color: rgba(255, 165, 0, 0.7) transparent;
     }
@@ -116,5 +117,10 @@
     }
     .social svg {
         @apply h-10 md:h-16 w-auto fill-current text-white stroke-current;
+    }
+
+    .divider {
+        @apply -mt-1 mb-3 md:-mt-4 rounded-full opacity-70 h-[1.5px] mx-auto w-[80%]
+            bg-gradient-to-r from-gr8-1 via-gr8-2 to-gr8-3;
     }
 }

@@ -15,7 +15,7 @@
             {
                 "timeline": "2020 - Present",
                 "head": "Pursuing B.Tech in Computer Science & Engineering",
-                "place": "Indian Institute of Informatio Tehnology, Guwahati",
+                "place": "Indian Institute of Information Tehnology, Guwahati",
                 "additional": [
                     "Currently in Second Year",
                     "Programming Club Coordinator since Sep '21",
@@ -23,6 +23,9 @@
                 ]
             }
         ],
-        "bio": "Hey there! I am currently a sophomore with an eager to learn various development skills. I am enthusiastic in Web3 and Blockchain Technologies and currently learning the same. Besides coding, I love web and movie series(es). My hobbies include video games and playing Guitar. Feel free to contact me for anything :)"
+        "achievements": [
+            "Secured worldwide rank of 779 in Google Hash Code 2022"
+        ],
+        "bio": "Hey there! I am a sophomore with a great desire to learn various development skills. I am enthusiastic in Web3 and Blockchain Technologies and currently learning the same. Besides coding, I can also do some graphic designing jobs - logos etc. My hobbies include playing video games and playing Guitar. <br> Feel free to contact me for anything :)"
     }
 }
