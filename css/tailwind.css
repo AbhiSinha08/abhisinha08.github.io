@@ -71,7 +71,7 @@
     .skills-box {
         @apply snap-always min-w-[20rem] sm:min-w-[24rem] flex-grow h-[95%] rounded-2xl
             border-[1.5px] backdrop-blur-md backdrop-filter relative
-            font-nunito font-normal text-xl overflow-y-auto
+            font-nunito font-normal text-xl overflow-y-auto overflow-x-hidden
             transform duration-200 lg:motion-safe:hover:scale-100 lg:motion-safe:scale-[98%]
             lg:motion-safe:opacity-90 lg:motion-safe:hover:opacity-100;
     }
