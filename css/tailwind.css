@@ -56,11 +56,14 @@
 @layer components {
     .nav-btn {
         @apply px-4 pt-1 h-auto cursor-pointer sm:hover:text-yellow-400
-            transition ease-linear duration-100 sm:hover:translate-y-1;
+            transition ease-linear duration-200 sm:hover:translate-y-1;
     }
     .nav-btn hr {
         @apply border-[1px] rounded-full border-yellow-500
-            sm:border-transparent w-full sm:w-auto;
+            sm:border-transparent w-full sm:w-auto
+            sm:border-yellow-400 sm:bg-yellow-400
+            transform transition duration-200
+            sm:scale-x-0;
     }
 
     .sec-head {
@@ -73,7 +76,7 @@
             border-[1.5px] backdrop-blur-md backdrop-filter relative
             font-nunito font-normal text-xl overflow-y-auto overflow-x-hidden
             transform duration-200 lg:motion-safe:hover:scale-100 lg:motion-safe:scale-[98%]
-            lg:motion-safe:opacity-90 lg:motion-safe:hover:opacity-100;
+            lg:motion-safe:opacity-90 lg:motion-safe:hover:opacity-100;        
     }
     .skills-box > p {
         @apply text-white font-nunito font-semibold text-2xl py-2

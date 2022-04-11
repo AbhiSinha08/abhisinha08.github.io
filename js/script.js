@@ -564,26 +564,55 @@ document.addEventListener('DOMContentLoaded', () => {
     const projects = document.querySelector("#projects");
     const about = document.querySelector("#about");
     const contact = document.querySelector("#contact");
+    const topPos = {
+        home: home.offsetTop,
+        skills: skills.offsetTop,
+        projects: projects.offsetTop,
+        about: about.offsetTop,
+        contact: contact.offsetTop
+    };
+    var currentElement = 0;
 
     document.querySelector('#skills-btn').addEventListener("click", () => {
-        var topPos = skills.offsetTop;
-        content.scrollTop = topPos;
+        content.scrollTop = topPos.skills;
+        currentElement = 1;
     })
 
     document.querySelector('#projects-btn').addEventListener("click", () => {
-        var topPos = projects.offsetTop;
-        content.scrollTop = topPos;
+        content.scrollTop = topPos.projects;
+        currentElement = 2;
     })
 
     document.querySelector('#about-btn').addEventListener("click", () => {
-        var topPos = about.offsetTop;
-        content.scrollTop = topPos;
+        content.scrollTop = topPos.about;
+        currentElement = 3;
     })
 
     document.querySelector('#contact-btn').addEventListener("click", () => {
-        var topPos = contact.offsetTop;
-        content.scrollTop = topPos;
+        content.scrollTop = topPos.contact;
+        currentElement = 4;
     })
+
+
+    // Scroll snap with JS
+    // const scrollContainer = document.querySelector('.scroll-y-container');
+    // const scrollElements = document.querySelectorAll('.scroll-y');
+    // const nextPos = () => (currentElement + 1) % scrollElements.length;
+    // let scrolling = false;
+
+    // scrollContainer.addEventListener('wheel', (event) => {
+    //     scrolling = true;
+    // });
+
+    // setInterval(() => {
+    //     if (scrolling) {
+    //         scrolling = false;
+    //         // place the scroll handling logic here
+    //         scrollContainer.scrollTo(0, scrollElements[nextPos()].offsetTop);
+    //         currentElement = nextPos();
+    //     }
+    // },200);
+    
 
     // On scroll animations
     // scrollAnimate(".fade-l-scroll", "motion-safe:animate-fade-l");
