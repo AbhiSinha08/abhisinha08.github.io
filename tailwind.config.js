@@ -5,7 +5,7 @@ module.exports = {
         colors: {
             base: '#0C0032',
             custom:{
-                green: '#77b828'
+                green: '#2fce44'
             },
             gr1:{
                 1: '#8E2DE2',
