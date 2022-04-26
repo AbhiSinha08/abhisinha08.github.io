@@ -4,8 +4,11 @@
 
     "general": {
         "name": "Abhinav Kumar",
-        "intro": "I am Abhinav Kumar, a full-stack web developer with a diverse set of skills.",
+        "shortIntro": "I am Abhinav Kumar, a full-stack web developer with a diverse set of skills.",
         "resume": "Abhinav_Kumar.pdf",
-        "photo": "photo.jpg"
+        "photo": "photo.jpg",
+        "contact": {
+            "email": "abhinav.kumar@iiitg.ac.in"
+        }
     }
 }

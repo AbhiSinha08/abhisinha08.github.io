@@ -8,7 +8,7 @@
     <!-- <meta http-equiv="cache-control" content="Private" />
     <meta http-equiv="Expires" content="36000" /> -->
 
-    <title> Abhinav Kumar - Portfolio </title>
+    <title> Portfolio </title>
     <link rel="shortcut icon" href="./data/images/icon.png" type="image/x-icon">
 
     <script src="./js/script.js"></script>
@@ -31,7 +31,7 @@
             <div class="flex justify-between items-center">
                 <a id="home-btn" href="/" class="flex items-center">
                     <img src="./data/images/icon.png" alt="Logo" class="h-20 p-4">
-                    <span class="md:ml-2 text-white font-nunito font-bold text-2xl xs:text-3xl"> Abhinav Kumar </span>
+                    <span id="name" class="md:ml-2 text-white font-nunito font-bold text-2xl xs:text-3xl"> </span>
                 </a>
                 <button id="menu" class="sm:hidden border-2 px-1 border-transparent focus:border-yellow-500 rounded-lg">
                     <svg class="fill-yellow-500 h-8" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M 2 5 L 2 7 L 22 7 L 22 5 L 2 5 z M 2 11 L 2 13 L 22 13 L 22 11 L 2 11 z M 2 17 L 2 19 L 22 19 L 22 17 L 2 17 z"></path></svg>
@@ -65,7 +65,9 @@
                 <div class="lg:flex mt-[5vh] justify-around items-center h-[55vh]">
                     <div class="lg:max-w-[40vw] lg:mr-4 text-xl md:text-2xl text-center">
                         <span class="block font-mono font-semibold text-4xl xs:text-5xl xl:text-6xl mb-6"> <span id="hello"></span><span class="font-sans font-extrabold text-green-500 animate-blink">_</span> </span>
-                        I am Abhinav Kumar, a full-stack web developer with a diverse set of skills.
+                        <p id="shortintro">
+                            <!-- inserted through JS -->
+                        </p>
                     </div>
     
                     <button id="resume" class="cursor-pointer mx-auto lg:mx-0 flex py-5 px-8 sm:px-10 md:px-16 rounded-full text-2xl sm:text-3xl font-semibold my-10 bg-gradient-to-r from-gr1-1 via-gr1-2 to-gr1-3 motion-safe:animate-gradient hover:scale-x-105 duration-300">

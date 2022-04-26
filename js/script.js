@@ -453,6 +453,13 @@ function showGeneral() {
     const contact = document.querySelector('#contact');
     const home = document.querySelector("#home");
     // TODO
+    document.title = data.general.name + " - Portfolio";
+    document.querySelector('#name').innerHTML = data.general.name;
+    home.querySelector('#shortintro').innerHTML = data.general.shortIntro;
+
+    home.querySelector('#resume').addEventListener("click", () => {
+        window.location.href = "./data/" + data.general.resume;
+    });
 }
 
 function showAbout() {
@@ -554,10 +561,6 @@ document.addEventListener('DOMContentLoaded', () => {
             nav.classList.add("hidden");
         });
     }
-
-    document.querySelector('#resume').addEventListener("click", () => {
-        window.location.href = "./data/Abhinav_Kumar.pdf";
-    });
 
     const home = document.querySelector("#home");
     const skills = document.querySelector("#skills");
