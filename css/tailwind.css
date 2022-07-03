@@ -87,7 +87,7 @@
     }
 
     .proj-sec {
-        @apply bg-custom-green/70 border-[1.5px] lg:border-[0.5px] lg:hover:border-[1.5px]
+        @apply bg-custom-green/70 border-[1.5px] lg:border-[0.5px] lg:motion-safe:hover:border-[1.5px]
         border-custom-green backdrop-filter backdrop-blur-sm text-lg font-semibold
         px-6 my-2 lg:my-3 pb-1 focus:ring-2 focus:ring-white lg:focus:ring-0 rounded-lg
         shadow-lg shadow-custom-green/40 lg:motion-safe:opacity-90 lg:motion-safe:hover:opacity-100
