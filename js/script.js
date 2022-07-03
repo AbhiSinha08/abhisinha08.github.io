@@ -651,32 +651,26 @@ document.addEventListener('DOMContentLoaded', () => {
     const projects = document.querySelector("#projects");
     const about = document.querySelector("#about");
     const contact = document.querySelector("#contact");
-    const topPos = {
-        home: home.offsetTop,
-        skills: skills.offsetTop,
-        projects: projects.offsetTop,
-        about: about.offsetTop,
-        contact: contact.offsetTop
-    };
+    
     var currentElement = 0;
 
     document.querySelector('#skills-btn').addEventListener("click", () => {
-        content.scrollTop = topPos.skills;
+        content.scrollTop = skills.offsetTop;
         currentElement = 1;
     })
 
     document.querySelector('#projects-btn').addEventListener("click", () => {
-        content.scrollTop = topPos.projects;
+        content.scrollTop = projects.offsetTop;
         currentElement = 2;
     })
 
     document.querySelector('#about-btn').addEventListener("click", () => {
-        content.scrollTop = topPos.about;
+        content.scrollTop = about.offsetTop;
         currentElement = 3;
     })
 
     document.querySelector('#contact-btn').addEventListener("click", () => {
-        content.scrollTop = topPos.contact;
+        content.scrollTop = contact.offsetTop;
         currentElement = 4;
     })
 
