@@ -1,6 +1,24 @@
 {
     "comments": ["images path: data/images/"],
+    "removed": [
+        {
+            "Address Formatter": {
+                "desc": "An API + web-based interface to format addresses to remove repetitive area names, have proper capitalization and be less bulkier. It takes the raw address same as in aadhar portal's pattern.",
+                "images": {
+                    "main": "aadhaar1.png",
+                    "slides": ["aadhaar2.png"]
+                },
+                "techStack": ["Python", "Flask", "JavaScript", "HTML", "TailwindCSS"],
+                "links": {
+                    "github": "https://github.com/AbhiSinha08/Aadhaarhack",
+                    "hosted": "https://address-formatter.herokuapp.com/",
+                    "demo": null
+                }
+            }
+        }
+    ],
 
+    
     "projects": {
         "web": [
             {
@@ -14,6 +32,21 @@
                     "links": {
                         "github": "https://github.com/AbhiSinha08/abhisinha08.github.io",
                         "hosted": "https://abhisinha08.github.io",
+                        "demo": null
+                    }
+                }
+            },
+            {
+                "WeatherWise": {
+                    "desc": "A clean and modern looking Weather Application with search history, current weather details and forecasts. Created using ReactJS and TailwindCSS.",
+                    "images": {
+                        "main": "weatherwise1.jpg",
+                        "slides": ["weatherwise2.jpg", "weatherwise3.jpg"]
+                    },
+                    "techStack": ["JavaScript", "React", "TailwindCSS"],
+                    "links":{
+                        "github": "https://github.com/AbhiSinha08/WeatherWise",
+                        "hosted": "https://abhisinha08.github.io/WeatherWise",
                         "demo": null
                     }
                 }
@@ -44,21 +77,6 @@
                     "links": {
                         "github": "https://github.com/AbhiSinha08/HotelManagementSystem",
                         "hosted": null,
-                        "demo": null
-                    }
-                }
-            },
-            {
-                "Address Formatter": {
-                    "desc": "An API + web-based interface to format addresses to remove repetitive area names, have proper capitalization and be less bulkier. It takes the raw address same as in aadhar portal's pattern.",
-                    "images": {
-                        "main": "aadhaar1.png",
-                        "slides": ["aadhaar2.png"]
-                    },
-                    "techStack": ["Python", "Flask", "JavaScript", "HTML", "TailwindCSS"],
-                    "links": {
-                        "github": "https://github.com/AbhiSinha08/Aadhaarhack",
-                        "hosted": "https://address-formatter.herokuapp.com/",
                         "demo": null
                     }
                 }
