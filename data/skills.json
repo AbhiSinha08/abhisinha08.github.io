@@ -23,15 +23,15 @@
                 }
             },
             {
-                "Solidity": {
-                    "rating": 1,
-                    "icon": "sol.png"
+                "Rust": {
+                    "rating": 2,
+                    "icon": "rust.png"
                 }
             },
             {
-                "SQL": {
-                    "rating": 2,
-                    "icon": "db.png"
+                "Solidity": {
+                    "rating": 1,
+                    "icon": "sol.png"
                 }
             }
         ],
@@ -56,9 +56,9 @@
                 }
             },
             {
-                "PyGame": {
+                "MySQL": {
                     "rating": 2,
-                    "icon": "game.png"
+                    "icon": "mysql.png"
                 }
             }
         ],
@@ -74,12 +74,6 @@
                 "Git": {
                     "rating": 3,
                     "icon": "git.png"
-                }
-            },
-            {
-                "MySQL": {
-                    "rating": 2,
-                    "icon": "mysql.png"
                 }
             },
 			{
