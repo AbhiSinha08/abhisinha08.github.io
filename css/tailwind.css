@@ -97,7 +97,7 @@
         @apply text-base text-xl text-white font-nunito font-semibold flex justify-between py-2 cursor-pointer;
     }
     .proj-sec header svg {
-        @apply h-6 w-auto fill-transparent stroke-base transform transition duration-200 ease-in-out;
+        @apply h-6 w-auto fill-transparent stroke-white/40 transform transition duration-200 ease-in-out;
     }
     .proj-sec > div {
         /* flex applied through js */
