@@ -87,14 +87,14 @@
     }
 
     .proj-sec {
-        @apply bg-custom-green/70 border-[1.5px] lg:border-[0.5px] lg:motion-safe:hover:border-[1.5px]
-        border-custom-green backdrop-filter backdrop-blur-sm text-lg font-semibold
-        px-6 my-2 lg:my-3 pb-1 focus:ring-2 focus:ring-white lg:focus:ring-0 rounded-lg
-        shadow-lg shadow-custom-green/40 lg:motion-safe:opacity-90 lg:motion-safe:hover:opacity-100
+        @apply bg-white/10 border-[1.5px] lg:border-[0.5px] lg:motion-safe:hover:border-white/10
+        border-white/0 backdrop-filter backdrop-blur-md text-lg font-semibold
+        px-6 my-2 lg:my-3 pb-1 focus:ring-1 focus:ring-white/50 lg:focus:ring-0 rounded-lg
+        lg:motion-safe:opacity-90 lg:motion-safe:hover:opacity-100
         transition duration-200;
     }
     .proj-sec header {
-        @apply text-base text-xl font-nunito font-semibold flex justify-between py-2 cursor-pointer;
+        @apply text-base text-xl text-white font-nunito font-semibold flex justify-between py-2 cursor-pointer;
     }
     .proj-sec header svg {
         @apply h-6 w-auto fill-transparent stroke-base transform transition duration-200 ease-in-out;
