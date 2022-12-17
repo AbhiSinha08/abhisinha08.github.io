@@ -117,6 +117,22 @@
             }
         ],
         "web3":[],
-        "ml": []
+        "ml": [
+            {
+                "Stress Detection System": {
+                    "desc": "Machine Learning Course Project. A stress detection System using WESAD Dataset for wearable stress and affect detection. Uses Sk-learn's Random Forest Classifier Model for prediction. Demonstration app made in React and Flask",
+                    "images": {
+                        "main": "stress1.png",
+                        "slides": ["stress2.png"]
+                    },
+                    "techStack": ["Python", "Scikit-Learn"],
+                    "links": {
+                        "github": "https://github.com/AbhiSinha08/stress-detection",
+                        "hosted": null,
+                        "demo": "https://github.com/AbhiSinha08/stress-detection/raw/main/Presentation.pdf"
+                    }
+                }
+            }
+        ]
     }
 }
