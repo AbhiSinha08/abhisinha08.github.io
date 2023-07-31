@@ -2,6 +2,15 @@
     "comments": ["0: learning, 1: beginner, 2: intermediate, 3: experienced, 4: expert",
                     "icons path: data/images/"],
 
+    "removed": [
+        {
+            "TailwindCSS": {
+                "rating": 3,
+                "icon": "tailwind.png"
+            }
+        }
+    ],
+
     "skills": {
         "languages": [
             {
@@ -38,9 +47,9 @@
 
         "libraries": [
             {
-                "TailwindCSS": {
+                "ReactJS": {
                     "rating": 3,
-                    "icon": "tailwind.png"
+                    "icon": "react.png"
                 }
             },
             {
@@ -50,7 +59,7 @@
                 }
             },
             {
-                "ReactJS": {
+                "React Native": {
                     "rating": 2,
                     "icon": "react.png"
                 }
@@ -59,6 +68,12 @@
                 "MySQL": {
                     "rating": 2,
                     "icon": "mysql.png"
+                }
+            },
+            {
+                "MongoDB": {
+                    "rating": 1,
+                    "icon": "mongodb.png"
                 }
             }
         ],
@@ -82,6 +97,12 @@
 					"icon": "aws.png"
 				}
 			},
+            {
+                "Docker": {
+                    "rating": 1,
+                    "icon": "docker.png"
+                }
+            },
             {
                 "Adobe Illustrator": {
                     "rating": 2,

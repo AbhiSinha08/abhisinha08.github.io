@@ -22,17 +22,17 @@
     "projects": {
         "web": [
             {
-                "Portfolio": {
-                    "desc": "This website! <br> Personal Portfolio website built from scratch using TailwindCSS and Vanilla JavaScript.",
+                "Sound Snipper": {
+                    "desc": "A web application to extract audio from videos, convert, clip, comment with timestamps and share audio with everyone.",
                     "images": {
-                        "main": "portfolio1.png",
-                        "slides": ["portfolio2.png", "portfolio3.png", "portfolio4.png"]
+                        "main": "soundsnipper1.png",
+                        "slides": ["soundsnipper2.png", "soundsnipper3.png"]
                     },
-                    "techStack": ["JavaScript", "HTML", "TailwindCSS"],
-                    "links": {
-                        "github": "https://github.com/AbhiSinha08/abhisinha08.github.io",
-                        "hosted": "https://abhisinha08.github.io",
-                        "demo": null
+                    "techStack": ["JavaScript", "React", "Python", "Flask", "MongoDB"],
+                    "links":{
+                        "github": "https://github.com/AbhiSinha08/sound-snipper",
+                        "hosted": null,
+                        "demo": "https://www.youtube.com/watch?v=0lhOklXGTZw"
                     }
                 }
             },
@@ -47,6 +47,21 @@
                     "links":{
                         "github": "https://github.com/AbhiSinha08/WeatherWise",
                         "hosted": "https://abhisinha08.github.io/WeatherWise",
+                        "demo": null
+                    }
+                }
+            },
+            {
+                "Portfolio": {
+                    "desc": "This website! <br> Personal Portfolio website built from scratch using TailwindCSS and Vanilla JavaScript.",
+                    "images": {
+                        "main": "portfolio1.png",
+                        "slides": ["portfolio2.png", "portfolio3.png", "portfolio4.png"]
+                    },
+                    "techStack": ["JavaScript", "HTML", "TailwindCSS"],
+                    "links": {
+                        "github": "https://github.com/AbhiSinha08/abhisinha08.github.io",
+                        "hosted": "https://abhisinha08.github.io",
                         "demo": null
                     }
                 }
@@ -83,6 +98,21 @@
             }
         ],
         "app": [
+            {
+                "Parko": {
+                    "desc": "Parking management system app - A Mobile App to find and reserve Parking Spots in your city",
+                    "images": {
+                        "main": "parko1.png",
+                        "slides": ["parko2.png", "parko3.png"]
+                    },
+                    "techStack": ["React Native", "JavaScript", "Python", "MySQL", "Flask"],
+                    "links": {
+                        "github": "https://github.com/AbhiSinha08/parko",
+                        "hosted": null,
+                        "demo": null
+                    }
+                }
+            },
             {
                 "Library Management System": {
                     "desc": "A Library Management App made in Python with a SQLite Database connection with a simple graphical user interface built using Tkinter library.",

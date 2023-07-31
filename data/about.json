@@ -4,19 +4,20 @@
     "about": {
         "history": [
             {
-                "timeline": "2018",
-                "head": "Completed Secondary Schooling",
-                "place": "DAV Public School, Muzaffarpur",
-                "additional": [
-                    "Class X CBSE Board - 93.8%"
-                ]
-            },
-            {
                 "timeline": "2020",
                 "head": "Completed Senior Secondary Schooling",
                 "place": "Himalayan International School, Patna",
                 "additional": [
-                    "Class XII CBSE Board - 93.6%"
+                    "Class XII CBSE Board - 93.6%",
+                    "Class X CBSE Board - 93.8%"
+                ]
+            },
+            {
+                "timeline": "2023",
+                "head": "Internship",
+                "place": "Tekizma Inc. (Remote)",
+                "additional": [
+                    "Gained Valuable Industry Experience while Completing Internship (Dec '22 - Apr '23)"
                 ]
             },
             {
@@ -24,9 +25,9 @@
                 "head": "Pursuing B.Tech in Computer Science & Engineering",
                 "place": "Indian Institute of Information Tehnology, Guwahati",
                 "additional": [
-                    "Currently in Third Year",
-                    "Programming Club Coordinator (Sep '21 - Apr '22)",
-                    "Second Year CPI: 9.29"
+                    "Currently in Final Year",
+                    "Programming Club Coordinator (Sep '21 - Mar '22)",
+                    "Third Year CPI: 8.98"
                 ]
             }
         ],
@@ -34,6 +35,6 @@
             "Completed Blockchain Specialization (4 courses) offered by University at Buffalo through Coursera",
             "Secured worldwide rank of 779 in Google Hash Code 2022"
         ],
-        "bio": "Hey there! I am a pre-final year college student with a great desire to learn various development skills. I am enthusiastic in Web3 and Blockchain Technologies and currently learning the same. Besides coding, I can also do some graphic designing jobs - logos etc. My hobbies include playing video games and playing Guitar. <br> Feel free to contact me for anything :)"
+        "bio": "Hey there! I am a final year college student with a great desire to learn various development skills. I am enthusiastic in Web and Mobile App Technologies and currently searching for full time opportunities in the same. Besides coding, I can also do some graphic designing jobs - logos etc. My hobbies include playing video games and playing Guitar. <br> Feel free to contact me for anything :)"
     }
 }
