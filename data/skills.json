@@ -21,7 +21,7 @@
             },
             {
                 "JavaScript": {
-                    "rating": 2,
+                    "rating": 3,
                     "icon": "js.png"
                 }
             },
@@ -41,6 +41,12 @@
                 "Solidity": {
                     "rating": 1,
                     "icon": "sol.png"
+                }
+            },
+            {
+                "Ruby": {
+                    "rating": 1,
+                    "icon": "ruby.png"
                 }
             }
         ],
@@ -75,6 +81,12 @@
                     "rating": 1,
                     "icon": "mongodb.png"
                 }
+            },
+            {
+                "Rails": {
+                    "rating": 1,
+                    "icon": "rails.png"
+                }
             }
         ],
 
@@ -104,9 +116,9 @@
                 }
             },
             {
-                "Adobe Illustrator": {
-                    "rating": 2,
-                    "icon": "ai.png"
+                "Apache Airflow": {
+                    "rating": 1,
+                    "icon": "airflow.png"
                 }
             }
         ]

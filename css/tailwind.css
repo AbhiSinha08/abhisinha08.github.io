@@ -83,7 +83,7 @@
             text-center absolute top-0 left-0 w-full flex flex-col;
     }
     .skills-box hr {
-        @apply rounded-full w-[80%] bg-white mx-auto;
+        @apply rounded-full w-[80%] bg-white mx-auto mb-2;
     }
 
     .proj-sec {
@@ -125,5 +125,15 @@
     .divider {
         @apply -mt-1 mb-3 md:-mt-4 rounded-full opacity-70 h-[1.5px] mx-auto w-[80%]
             bg-gradient-to-r from-gr8-1 via-gr8-2 to-gr8-3;
+    }
+}
+
+@media only screen and (max-width: 640px) {
+    #events > div {
+        display: none;
+    }
+
+    #events > div:nth-last-child(-n+3) {
+        display: flex !important;
     }
 }

@@ -146,7 +146,23 @@
                 }
             }
         ],
-        "web3":[],
+        "web3":[
+            {
+                "MedVault": {
+                    "desc": "A Decentralized Electronic Medical Record System to keep your medical prescriptions and lab reports and allow easy access to the doctors. Built on Ethereum Blockchain network with Solidity leveraging IPFS.",
+                    "images": {
+                        "main": "medvault1.png",
+                        "slides": ["medvault2.png", "medvault3.png"]
+                    },
+                    "techStack": ["Solidity", "React", "JavaScript", "Web3.js"],
+                    "links": {
+                        "github": "https://github.com/AbhiSinha08/med-vault",
+                        "hosted": null,
+                        "demo": null
+                    }
+                }
+            }
+        ],
         "ml": [
             {
                 "Stress Detection System": {

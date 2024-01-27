@@ -29,12 +29,22 @@
                     "Programming Club Coordinator (Sep '21 - Mar '22)",
                     "Third Year CPI: 8.98"
                 ]
+            },
+            {
+                "timeline": "Jan '24 - Present",
+                "head": "Engineering Intern",
+                "place": "Branch International",
+                "additional": [
+                    "6 month full-time engineering internship",
+                    "Working with backend server and Data Pipelines"
+                ]
             }
         ],
         "achievements": [
+            "Joined Branch International as a full-time Engineering Intern",
             "Completed Blockchain Specialization (4 courses) offered by University at Buffalo through Coursera",
             "Secured worldwide rank of 779 in Google Hash Code 2022"
         ],
-        "bio": "Hey there! I am a final year college student with a great desire to learn various development skills. I am enthusiastic in Web and Mobile App Technologies and currently searching for full time opportunities in the same. Besides coding, I can also do some graphic designing jobs - logos etc. My hobbies include playing video games and playing Guitar. <br> Feel free to contact me for anything :)"
+        "bio": "Hey there! I am a final year college student with a great desire to learn various development skills. I am enthusiastic in Web and Mobile App Technologies and currently working at Branch International as a Backend Engineering Intern. Besides coding, I can also do some graphic designing jobs - logos etc. My hobbies include playing video games and playing Guitar. <br> Feel free to contact me for anything :)"
     }
 }
